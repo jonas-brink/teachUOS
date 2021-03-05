@@ -1,0 +1,6 @@
+pluginname=KoOp
+pluginclassname=KoOp
+origin=virtUOS
+version=1.0
+studipMinVersion=4.1
+studipMaxVersion=4.2.99
