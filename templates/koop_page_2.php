@@ -1,5 +1,11 @@
+<!--
+    Template für jeweils die 2. Ebene (Keine Kacheln)
+-->
+
 <div class='koop-sub-content koop-content-centered' style='width:100%;  display: none;'>
+    JEWEILS 2. EBENE - KEINE KACHELN
     <div class='koop-kacheln-behalter'>
+        KOOP KACHELN BEHALTER
         <? if ($text_sidemenu == true) : ?>   
          <a class='koop-back hover_image'  href='..\'>
          <img width="30" style="margin-left: -20px;"  class="bottom" src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images3/arrow-back.svg" />
@@ -48,9 +54,10 @@
            
         </div> 
         
-   </div>
+   </div> 
    <div class='koop-text-behalter'>
-      
+
+      GOODBYE
    </div>
 </div>
 
