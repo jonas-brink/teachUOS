@@ -101,8 +101,7 @@ class PagesController extends StudipController
 
     public function cw_action()
     {
-
-        // hide courseware navigation
+        // Hide standard courseware
         PageLayout::addStyle('.cw-sidebar { display: none; }');
         PageLayout::addStyle('.breadcrumb { display: none; }');
         PageLayout::addStyle('.mode-switch { display: none; }');
@@ -111,22 +110,24 @@ class PagesController extends StudipController
         PageLayout::addStyle('.prev { display: none !important; }');
         PageLayout::addStyle('.next { display: none !important; }');
 
+        // TODO: Check use case
         if (UserConfig::get($GLOBALS['user']->id)->koop_layout == 1 || !isset(UserConfig::get($GLOBALS['user']->id)->koop_layout)) {
+            // TODO: Check use case
             PageLayout::addStyle('.active-subchapter { display: none; }');
             PageLayout::addStyle('.subchapters { display: none; }');
             PageLayout::addStyle('.chapter { display: none; }');
 
-            // add koop css
+            // add new courseware style
             PageLayout::addStylesheet($this->plugin->getPluginURL() . '/assets/koop.css');
             PageLayout::addStylesheet($this->plugin->getPluginURL() . '/assets/menu.css');
         } elseif (UserConfig::get($GLOBALS['user']->id)->koop_layout == 2) {
-
+            // Hide rest of courseware
             PageLayout::addStyle('ol.subchapters{ list-style:none !important; }');
             PageLayout::addStyle('.controls { display: none; }');
             PageLayout::addStyle('.handle { display: none; }');
             PageLayout::addStyle('.no-content { display: none; }');
 
-            // add koop css
+            // add new courseware style
             PageLayout::addStylesheet($this->plugin->getPluginURL() . '/assets/koop.css');
             PageLayout::addStylesheet($this->plugin->getPluginURL() . '/assets/menu_2.css');
         }
@@ -135,14 +136,23 @@ class PagesController extends StudipController
 
 
         // add koop menu
+        // add template to Page
         PageLayout::addBodyElements($this->get_koop_content());
+        // enable new courseware style
         PageLayout::addScript($this->plugin->getPluginURL() . '/assets/menu.js');
 
         require_once 'vendor/trails/trails.php';
         require_once 'app/controllers/studip_controller.php';
         require_once 'app/controllers/authenticated_controller.php';
 
+
+        // get information from the courseware plugin
         $Courseware_Plugin = \PluginManager::getInstance()->getPlugin('Courseware');
+
+        // Check if Courseware is enabled
+        // if($Courseware_Plugin['enabled']) {
+        // **Courseware ist angeschaltet...**
+        // }
 
         $dispatcher = new Trails_Dispatcher(
             $Courseware_Plugin->getPluginPath(),
@@ -151,9 +161,10 @@ class PagesController extends StudipController
         );
         $dispatcher->plugin = $Courseware_Plugin;
 
-
+        // load courseware
         $uri = 'courseware?' . explode('?', $_SERVER['REQUEST_URI'])[1];
         echo $dispatcher->map_uri_to_response($dispatcher->clean_request_uri((string) $uri))->output();
+
         exit();
     }
 
@@ -174,19 +185,28 @@ class PagesController extends StudipController
             ");
             $stmt->bindParam(":cid", $_GET['cid']);
             $stmt->execute();
+            // get all blocks from 'mooc_blocks'-table
             $all_blocks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            //set $current_parent id to 0
             $current_parent = 0;
+            // TODO: Remove for-loop ?
             for ($i = 0; $i < 5; $i++) {
+                // execute for all blocks in 'mooc_blocks'
                 foreach ($all_blocks as $block) {
+                    // if no $current_parent id has been set already AND block id is equivalent to request-param
                     if ($current_parent == 0 && $block['id'] == $_GET['selected']) {
                         if ($block['type'] == 'Chapter') {
+                            // if type of block is 'Chapter', set $current_parent to own id
                             $current_parent = $block['id'];
                             break;
                             break;
                         } else {
+                            // if type of block is NOT 'Chapter', set $current_parent to parent_id of block
                             $current_parent = $block['parent_id'];
                         }
                     }
+                    // TODO: check relevance
+                    // search for $current_parent-block
                     if ($current_parent != 0 && $block['id'] == $current_parent) {
                         if ($block['type'] == 'Chapter') {
                             $current_parent = $block['id'];
@@ -219,8 +239,7 @@ class PagesController extends StudipController
         }
 
 
-
-        # load flexi templates
+        // select koop_page_2 or koop_page as template
         $path_to_the_templates = dirname(__FILE__) . '/../templates';
         $factory = new Flexi_TemplateFactory($path_to_the_templates);
         $koop_page_template = '';
@@ -370,7 +389,7 @@ class PagesController extends StudipController
 
         header('Content-disposition: attachment; filename=koop_export.json');
         header('Content-type: application/json');
-        foreach ($koop_pages as $page) 
+        foreach ($koop_pages as $page)
         {
             $json_data[] = array($page['type'], $page['parent_id'], $page['seminar_id'], $page['selected'], $page['title'], $page['content'], $page['chdate'], $page['mkdate']);
         }
