@@ -796,6 +796,10 @@
 <script>
 var unique_kacheln;
 var current_customizable_id = -1;
+
+/**
+ * Opens customize-window in tile-view
+ */
 function openCustomizable(k_id){
 	current_customizable_id = k_id;
 	if(!unique_kacheln){
