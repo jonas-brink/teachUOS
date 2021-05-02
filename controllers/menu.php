@@ -4,8 +4,7 @@ class MenuController extends StudipController {
     public function __construct($dispatcher)
     {
         parent::__construct($dispatcher);
-        $this->plugin = $dispatcher->plugin;
-
+        $this->plugin = $GLOBALS['plugin'];
     }
 
     public function before_filter(&$action, &$args)
