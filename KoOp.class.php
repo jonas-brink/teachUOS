@@ -12,9 +12,7 @@
 
 class KoOp extends StudipPlugin implements StandardPlugin, SystemPlugin
 {
-    
-    const KOOP_ROLE = 'KoOp';
-    
+        
     public function __construct()
     {
         parent::__construct();
@@ -24,9 +22,6 @@ class KoOp extends StudipPlugin implements StandardPlugin, SystemPlugin
         //$navigation->setImage($GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->getPluginPath() . '/assets/images/koop.png');
         $navigation->setURL(PluginEngine::getURL($this, array(), 'index'));
         Navigation::addItem('/koop', $navigation);
-
-        //PageLayout::addStylesheet($this->getPluginURL().'/assets/koop_sem.css');
-        PageLayout::addScript($this->getPluginURL().'/assets/koop.js');
     }
 
     public function getPluginName()
@@ -68,7 +63,7 @@ class KoOp extends StudipPlugin implements StandardPlugin, SystemPlugin
     public function getTabNavigation($course_id)
     {
         //Link to overview page in the course
-        $tab = new Navigation($this->getPluginName(), PluginEngine::getURL($this, [], 'llll'));
+        $tab = new Navigation($this->getPluginName(), PluginEngine::getURL($this, [], 'newpage'));
         //$tab->setImage(Icon::create('blubber', Icon::ROLE_INFO_ALT));
         return [$this->getPluginName() => $tab];
     }

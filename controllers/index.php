@@ -1,5 +1,4 @@
 <?php
-require_once dirname(__file__) . '/../models/koop_page.php';
 
 class IndexController extends StudipController
 {
@@ -15,8 +14,9 @@ class IndexController extends StudipController
         parent::before_filter($action, $args);
         PageLayout::setTitle(_("teachUOS"));
 
-        $sidebar = Sidebar::Get();
-        $sidebar->setImage('../../' . $this->plugin->getPluginPath() . '/assets/images/teach_os.png');
+        // will not be shown
+        //$sidebar = Sidebar::Get();
+        //$sidebar->setImage('../../' . $this->plugin->getPluginPath() . '/assets/images/teach_os.png');
         PageLayout::addStylesheet($this->plugin->getPluginURL() . '/assets/koop.css');
     }
 

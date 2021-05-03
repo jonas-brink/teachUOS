@@ -25,9 +25,6 @@ $(document).ready(function () {
 
 	// add header to side menu
 	$(".chapter.selected").prependTo(".koop-kacheln-behalter");
-	if (typeof text_sidemenu == 'undefined') {
-		$(".subchapters").hide();
-	}
 
 	// TODO: Why this ???
 	// hide first sub section in menu
