@@ -22,6 +22,11 @@ class KoOp extends StudipPlugin implements StandardPlugin, SystemPlugin
         //$navigation->setImage($GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->getPluginPath() . '/assets/images/koop.png');
         $navigation->setURL(PluginEngine::getURL($this, array(), 'index'));
         Navigation::addItem('/koop', $navigation);
+        
+        // Add one subnavigation for consistency reasons
+        $teachUOS = new Navigation('teachUOS', PluginEngine::getURL($this, array(), 'index'), array());
+        $navigation->addSubNavigation('teachUOS', $teachUOS);
+        Navigation::activateItem('/koop/teachUOS');
     }
 
     public function getPluginName()
