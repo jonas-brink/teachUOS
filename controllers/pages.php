@@ -46,7 +46,7 @@ class PagesController extends StudipController
 
 
         // add koop menu
-        // add template to Page
+        // build sidebar around courseware with koop_page template
         PageLayout::addBodyElements($this->get_koop_content());
         // enable new courseware style
         PageLayout::addScript($this->plugin->getPluginURL() . '/assets/menu.js');
