@@ -23,7 +23,10 @@
 	margin: 0 auto;
 }
 
-
+/* Hide header of course in second layer */
+#layout_context_title {
+    display: none;
+}
 
 .koop-footer22{
      font-size: 9px;
