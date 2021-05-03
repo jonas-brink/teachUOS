@@ -13,10 +13,6 @@ class IndexController extends StudipController
     {
         parent::before_filter($action, $args);
         PageLayout::setTitle(_("teachUOS"));
-
-        // will not be shown
-        //$sidebar = Sidebar::Get();
-        //$sidebar->setImage('../../' . $this->plugin->getPluginPath() . '/assets/images/teach_os.png');
         PageLayout::addStylesheet($this->plugin->getPluginURL() . '/assets/koop.css');
     }
 
@@ -24,6 +20,18 @@ class IndexController extends StudipController
     {
         // Activate icon in main navigation
         Navigation::activateItem('koop/');
+        
+        // get course_id of koop course for view
+        $this->koop_course_id = $this->plugin->getKoopCourse();
+        // find block_ids by title
+        $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $this->koop_course_id, 'DURCH\'S STUDIUM']);
+        $this->study_block_id = $block->id;
+        $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $this->koop_course_id, 'IN DIE PRAXIS']);
+        $this->praxis_block_id = $block->id;
+        $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $this->koop_course_id, 'DIGITALE MEDIEN']);
+        $this->media_block_id = $block->id;
+        $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $this->koop_course_id, 'BLICK IN DIE FÄCHER']);
+        $this->subjects_block_id = $block->id;
     }
 
     // customized #url_for for plugins

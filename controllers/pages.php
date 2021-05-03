@@ -14,10 +14,6 @@ class PagesController extends StudipController
         parent::before_filter($action, $args);
         PageLayout::setTitle(_("teachUOS"));
         PageLayout::addStylesheet($this->plugin->getPluginURL() . '/assets/koop.css');
-
-        // will not be shown
-        //$sidebar = Sidebar::Get();
-        //$sidebar->setImage('../../' . $this->plugin->getPluginPath() . '/assets/images/teach_os.png');
     }
 
     public function index_action()

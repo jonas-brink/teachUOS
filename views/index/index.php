@@ -7,7 +7,7 @@
         </div>
         <div class="flex-container-1000-200-l100">	
             <div class="index_comic">
-                <a class='koop-index-navigation hover_image index_comic2' href='pages/cw?cid=99965fd1039274ecc637698846c52f2b&selected=21' >
+                <a class='koop-index-navigation hover_image index_comic2' href="<?= PluginEngine::getURL('koop/pages/cw', ['cid' => $koop_course_id, 'selected' => $study_block_id]) ?>" >
                     <img class="bottom" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_studium_hover.svg' ?>" />
                     <img class="top" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_studium.svg' ?>" />
                     <p class="index_comic_txt">DURCH'S <b>STUDIUM</b></p>
@@ -16,7 +16,7 @@
             
             
             <div class="index_comic">
-                <a class='koop-index-navigation hover_image index_comic1' href='pages/cw?cid=99965fd1039274ecc637698846c52f2b&selected=33' >
+                <a class='koop-index-navigation hover_image index_comic1' href="<?= PluginEngine::getURL('koop/pages/cw', ['cid' => $koop_course_id, 'selected' => $praxis_block_id]) ?>" >
                     <img class="bottom" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_praxis_hover.svg' ?>" />
                     <img class="top" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_praxis.svg' ?>" />
                     <p class="index_comic_txt">IN DIE <b>PRAXIS</b></p>
@@ -26,14 +26,14 @@
             </div>
             
             <div class="index_comic">
-                <a class='koop-index-navigation hover_image index_comic3' href='pages/cw?cid=99965fd1039274ecc637698846c52f2b&selected=30' >
+                <a class='koop-index-navigation hover_image index_comic3' href="<?= PluginEngine::getURL('koop/pages/cw', ['cid' => $koop_course_id, 'selected' => $media_block_id]) ?>" >
                     <img class="bottom" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_digital_hover.svg' ?>" />
                     <img class="top" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_digital.svg' ?>" />
                     <p class="index_comic_txt">DIGITALE <b>MEDIEN</b></p>
                 </a>
             </div>
             <div class="index_comic">
-                <a class='koop-index-navigation hover_image index_comic4' href='pages/cw?cid=99965fd1039274ecc637698846c52f2b&selected=27' >
+                <a class='koop-index-navigation hover_image index_comic4' href="<?= PluginEngine::getURL('koop/pages/cw', ['cid' => $koop_course_id, 'selected' => $subjects_block_id]) ?>" >
                     <img class="bottom" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_faecher_hover.svg' ?>" />
                     <img class="top" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_faecher.svg' ?>" />
                     <p class="index_comic_txt">BLICK IN DIE <b>FÄCHER</b></p>
@@ -68,7 +68,7 @@
 }
 
 #tabs{
-    display: none;
+    /*display: none;*/
 }
 
 #layout-sidebar {
