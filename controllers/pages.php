@@ -40,7 +40,7 @@ class PagesController extends StudipController
         PageLayout::addStyle('.no-content { display: none; }');
 
         // add new courseware style
-        PageLayout::addStylesheet($this->plugin->getPluginURL() . '/assets/menu_2.css');
+        PageLayout::addStylesheet($this->plugin->getPluginURL() . '/assets/menu.css');
 
 
 
@@ -81,12 +81,12 @@ class PagesController extends StudipController
 
     public function get_koop_content()
     {
-        // select koop_page_2 as template
+        // select koop_page as template
         $path_to_the_templates = dirname(__FILE__) . '/../templates';
         $factory = new Flexi_TemplateFactory($path_to_the_templates);
-        $koop_page_template = $factory->open('koop_page_2');
+        $koop_page_template = $factory->open('koop_page');
 
-        // set URI and path variables for koop_page_2 template
+        // set URI and path variables for koop_page template
         $koop_page_template->set_attribute('ABSOLUTE_URI_STUDIP', $GLOBALS['ABSOLUTE_URI_STUDIP']);
         $koop_page_template->set_attribute('getPluginPath', $this->plugin->getPluginPath());
 
