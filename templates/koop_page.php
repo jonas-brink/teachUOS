@@ -4,20 +4,33 @@
 
 <div class='koop-sub-content koop-content-centered' style='width:100%;  display: none;'>
     <div class='koop-kacheln-behalter'>
-         <a class='koop-back hover_image'  href='..\'>
-         <img width="30" style="margin-left: -20px;"  class="bottom" src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/arrow-back.svg" />
-         <img width="30" style="margin-left: -20px;" class="top" src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/arrow-back-outline.svg" /> <br>
-         
-         </a>    
+        <div id="chapterImg_container">
+            <? if ((array_search($selected_id, $id_arr) == "study") || (array_search($selected_parent_id, $id_arr) == "study") || (array_search($selected_grandparent_id, $id_arr) == "study")) : ?>
+                <img class="chapterImg" src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/B_studium.svg"/>
+            <? elseif ((array_search($selected_id, $id_arr) == "practice") || (array_search($selected_parent_id, $id_arr) == "practice") || (array_search($selected_grandparent_id, $id_arr) == "practice")) : ?>
+                <img class="chapterImg" src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/B_praxis.svg"/>
+            <? elseif ((array_search($selected_id, $id_arr) == "media") || (array_search($selected_parent_id, $id_arr) == "media") || (array_search($selected_grandparent_id, $id_arr) == "media")) : ?>
+                <img class="chapterImg" src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/B_digital.svg"/>
+            <? elseif ((array_search($selected_id, $id_arr) == "subjects") || (array_search($selected_parent_id, $id_arr) == "subjects") || (array_search($selected_grandparent_id, $id_arr) == "subjects")) : ?>        
+                <img class="chapterImg" src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/B_faecher.svg"/>
+            <? endif ?>
+        </div>
+
+        <!-- COURSEWARE SIDEBAR -->
+
+        <a class='koop-back hover_image'  href='..\'>
+            <img width="30" style="margin-left: -20px;"  class="bottom" src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/arrow-back.svg" />
+            <img width="30" style="margin-left: -20px;" class="top" src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/arrow-back-outline.svg" /> <br>
+        </a>    
         
-        <div class="koop-footer22 light">
-            
-         	<img width="90"  src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/B0_teachUOS1.svg" /><br>
-         	VOM ZENTRUM FÜR LEHRERBILDUNG DER<br>
-         	<p class="black fontsize13">
-         		UNVERSITÄT OSNABRÜCK
-         	</p>
-           
+        <div id="logo_wrapper">
+            <div class="koop-footer22 light">
+                <img width="90"  src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/B0_teachUOS1.svg" />
+                <br>
+                VOM ZENTRUM FÜR LEHRERBILDUNG DER
+                <br>
+                <p class="black fontsize13">UNVERSITÄT OSNABRÜCK</p>
+            </div>
         </div> 
         
    </div> 

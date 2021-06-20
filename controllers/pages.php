@@ -14,12 +14,14 @@ class PagesController extends StudipController
         parent::before_filter($action, $args);
         PageLayout::setTitle(_("teachUOS"));
         PageLayout::addStylesheet($this->plugin->getPluginURL() . '/assets/koop.css');
+        // Activate icon in main navigation + subnavigation
+        Navigation::activateItem('koop/teachUOS');
+        Navigation::getItem('course/mooc_courseware')->setActive(false);
     }
 
     public function index_action()
     {
-        // Activate icon in main navigation
-        Navigation::activateItem('koop/');
+
     }
 
     public function cw_action()
@@ -28,7 +30,6 @@ class PagesController extends StudipController
         PageLayout::addStyle('.cw-sidebar { display: none; }');
         PageLayout::addStyle('.breadcrumb { display: none; }');
         PageLayout::addStyle('.mode-switch { display: none; }');
-        PageLayout::addStyle('#tabs { display: none; }');
         PageLayout::addStyle('#courseware { display: none; }');
         PageLayout::addStyle('.prev { display: none !important; }');
         PageLayout::addStyle('.next { display: none !important; }');
@@ -89,28 +90,20 @@ class PagesController extends StudipController
         // set URI and path variables for koop_page template
         $koop_page_template->set_attribute('ABSOLUTE_URI_STUDIP', $GLOBALS['ABSOLUTE_URI_STUDIP']);
         $koop_page_template->set_attribute('getPluginPath', $this->plugin->getPluginPath());
+        $koop_page_template->set_attribute('id_arr', $this->plugin->getKoopBlockIDs());
+        $selected_id = Request::option('selected');
+        $koop_page_template->set_attribute('selected_id', $selected_id);
+        // get parent of selected courseware block
+        $selected_parent_id = \Mooc\DB\Block::find($selected_id)->parent_id;
+        $koop_page_template->set_attribute('selected_parent_id', $selected_parent_id);
+        // get grandparent of selected courseware block
+        $selected_grandparent_id = \Mooc\DB\Block::find($selected_parent_id)->parent_id;
+        $koop_page_template->set_attribute('selected_grandparent_id', $selected_grandparent_id);
+
 
         // render template
         $menu_content = $koop_page_template->render();
 
         return $menu_content;
-    }
-
-    // customized #url_for for plugins
-    public function url_for($to = '')
-    {
-        $args = func_get_args();
-
-        # find params
-        $params = array();
-        if (is_array(end($args))) {
-            $params = array_pop($args);
-        }
-
-        # urlencode all but the first argument
-        $args = array_map('urlencode', $args);
-        $args[0] = $to;
-
-        return PluginEngine::getURL($this->dispatcher->plugin, $params, join('/', $args));
     }
 }

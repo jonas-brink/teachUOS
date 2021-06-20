@@ -16,7 +16,7 @@
             
             
             <div class="index_comic">
-                <a class='koop-index-navigation hover_image index_comic1' href="<?= PluginEngine::getURL('koop/pages/cw', ['cid' => $koop_course_id, 'selected' => $praxis_block_id]) ?>" >
+                <a class='koop-index-navigation hover_image index_comic1' href="<?= PluginEngine::getURL('koop/pages/cw', ['cid' => $koop_course_id, 'selected' => $practice_block_id]) ?>" >
                     <img class="bottom" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_praxis_hover.svg' ?>" />
                     <img class="top" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_praxis.svg' ?>" />
                     <p class="index_comic_txt">IN DIE <b>PRAXIS</b></p>
@@ -65,10 +65,6 @@
     background-size: cover;
     background-position: center;
     background-image: url('<?= $GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_blue.svg' ?>');
-}
-
-#tabs{
-    /*display: none;*/
 }
 
 #layout-sidebar {
@@ -283,23 +279,6 @@ a.koop-index-navigation{
     float: left;
     width: 40px;
     margin-left: 77px;
-}
-
-.koop-footer22{
-    font-size: 10px;
-    float: right;
-    color: #ffffff;
-    
-    
-    /*
-    text-align: center;
-    margin-right: 4%;
-    margin-top: 5%;
-    */
-    text-align: right;
-    position: absolute; 
-    bottom: 40px; 
-    width: 96.5%;
 }
 
 #layout_content{
