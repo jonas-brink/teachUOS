@@ -13,7 +13,7 @@ $(document).ready(function () {
 			if (old == undefined) {
 				return null;
 			}
-			return old.replace("/studip/plugins.php/courseware/courseware", "/studip/plugins.php/koop/pages/cw");
+			return old.replace("/plugins.php/courseware/courseware", "/plugins.php/koop/pages/cw");
 		});
 	});
 
