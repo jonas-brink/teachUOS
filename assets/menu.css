@@ -1,8 +1,8 @@
 /*
- Koop menus in sidebar for courseware pages 
+ Koop menus in sidebar for courseware pages (layout 2) 
 */
 /* 
-    Created on : 08.05.2020, 11:01:38
+    Created on : 13.07.2020, 10:21:42
     Author     : firas
 */
 
@@ -15,24 +15,132 @@
 	padding:0px !important;
 	min-width: 1000px !important;
 }
+#layout_page{
+	/*min-width: 1200px !important;*/
+}
+
+.margin_center{
+	margin: 0 auto;
+}
+
+/* Hide header of course in second layer */
+#layout_context_title {
+    display: none;
+}
+
+#logo_wrapper {
+    padding-top: 100px;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.koop-footer22{
+     font-size: 9px;
+     color: #ffffff;
+     float: left;
+     text-align: center;
+     width: 100%;     
+}
+.koop-footer22 img{
+	margin-bottom: 37px;
+}
+.light {
+  font-weight: 300;
+}
+.regular {
+  font-weight: 400;
+}
+.bold {
+  font-weight: 700;
+}
+.black {
+  font-weight: 900;
+}
+.fontsize13 {
+  font-size: 13px;
+}
+    
+/* Rounded styling of second layer buttons */
+.subchapter div a {
+    border: 2px solid white;
+    border-radius: 10px;
+    display: block;
+    margin-left: 35px;
+    margin-right: 35px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.subchapter div a:hover {
+    background-color: white;
+    color: #28497c !important;
+}
+
+.subchapter.selected div a {
+    background-color: white;
+    color: #28497c !important;
+}
+
+/* Provide space between second layer buttons */
+.subchapter {
+    margin-bottom: 20px;
+}
+
+.chapter.selected b{
+		    color: #83a3d1;
+		    font-weight: normal;
+}
+
+.chapter.selected{
+	display: contents;
+}
+
+.chapter.selected div{
+	margin-bottom: 22px;
+}
+.section.selected{
+		  border-bottom: 4px double #28497c !important;
+}
 
 .active-section{
 	max-width: 1500px !important;
 	padding-top: 0em !important;
 	clear: none !important;
 }
-
-#courseware{
-	max-width: 100% !important;
+    
+.title h1{
+    color:#28497C !important;
 }
 
-.mobile-show-nav-button{
-	display: none !important;
+.title {
+    margin-bottom: 0px !important;
+}
+
+.width50floatleft{
+	width: 50%;
+	float: left;
+}
+
+.width50floatright{
+	width: 50%;
+	float: right;
+}
+
+.width50floatleft a{
+	margin-right: 5px;
+	/*margin-bottom: 5px;*/
+}
+
+.width50floatright a{
+	margin-left: 5px;
+	/*margin-bottom: 5px;*/
 }
 
 a.sub_kacheln {
-    width: 100px;
-    height: 90px;
+    width: 75px;
+    height: 75px;
     /*margin-left: 1.9em;
     margin-top: 2.1em;*/
     position: relative;
@@ -40,10 +148,10 @@ a.sub_kacheln {
 a.sub_kacheln img {
     position:absolute;
     left:0;
-    -webkit-transition: opacity 0.3s ease-in-out;
-    -moz-transition: opacity 0.3s ease-in-out;
-    -o-transition: opacity 0.3s ease-in-out;
-    transition: opacity 0.3s ease-in-out;
+    -webkit-transition: opacity 0.7s ease-in-out;
+    -moz-transition: opacity 0.7s ease-in-out;
+    -o-transition: opacity 0.7s ease-in-out;
+    transition: opacity 0.7s ease-in-out;
 }
 a.sub_kacheln img.top:hover {
     opacity:0;
@@ -55,24 +163,65 @@ a.sub_kacheln img.top:hover {
 }
 
 .koop-kacheln-behalter{
-    margin-left: 4%;
-    /*width:450px;*/
-    margin-right: 5%;
+    position: relative;
+    width:17%;
+    height: 100%;
     float:left;
+    background-color: #28497c;
+    text-align: center;
+    font-size: Large;
+    font-weight: 900;
+    min-height: 500px;
+    min-width: 250px;
+    
+    display: flex;
+	flex-direction: column;
 }
 
+.mobile-show-nav-button{
+	display: none !important;
+}
+
+a.navigate{
+        color: #ffffff !important;
+}
+
+ol.active-subchapter {
+    list-style: none !important;
+    float: right;
+    padding: 0 !important;
+}
+
+ol.active-subchapter li  > a {
+    color: #28497C !important;
+    width: auto !important;
+    height: auto !important;
+    border: 0px !important;
+    background-color: #fff !important;
+    background-image: none !important;
+    text-transform:uppercase !important;
+}
+
+ol.subchapters{
+	font-size: 14px;
+	font-weight: normal;
+	margin-top: 25px;
+	margin-left: -40px;
+	margin-bottom: 25px;
+	line-height: 1.82857143;
+}
+
+#courseware{
+	max-width: 100% !important;
+}
+                
 .koop-text-behalter{
-    width:57%;
+    width:60%;
     float:left;
+    margin-left: 10%;
+    /*margin-right: 10%;*/
+    padding-top: 5%;
 }
-
-@media (min-width: 1600px){
-	.koop-text-behalter{
-	    width:67%;
-	    float:left;
-	}
-}
-
 .koop-text-behalter h3 {
     font-size: 2.2em;
     margin-bottom: 1em;
@@ -82,9 +231,14 @@ a.sub_kacheln img.top:hover {
 }
 
 .koop-sub-content{
-    margin-top: 8em;
+    /*margin-top: 8em;*/
+    height: 100%;
 }
 
+.koop-back{
+	font-size: 12px;
+	color: #ffffff !important;
+}
 
 
 .sub_schwebend_blick img {
@@ -99,9 +253,7 @@ a.sub_kacheln img.top:hover {
 
 
 
-#tabs{
-    display: none;
-}
+
 
 #layout-sidebar {
     display: none;
@@ -117,7 +269,7 @@ a.sub_kacheln img.top:hover {
 .koop-content-centered {
     margin-left: auto;
     margin-right: auto;
-    max-width: 1500px !important;
+    width: 750px;
 }
 
 .koop-content h1 {
@@ -229,7 +381,12 @@ a.sub_kacheln img.top:hover {
     margin-bottom: 0;
 }
 
- .fill-blue 
-    {
+.fill-blue {
     background-color: #28497c;
+}
+
+.chapterImg {
+    max-width: 75%;
+    margin-top: 40px;
+    margin-bottom: 15px;
 }

@@ -24,10 +24,7 @@ $(document).ready(function () {
 	$(".navigate").attr("data-title", "");
 
 	// add header to side menu
-	$(".chapter.selected").prependTo(".koop-kacheln-behalter");
-	if (typeof text_sidemenu == 'undefined') {
-		$(".subchapters").hide();
-	}
+	$(".chapter.selected").insertAfter("#chapterImg_container");
 
 	// TODO: Why this ???
 	// hide first sub section in menu

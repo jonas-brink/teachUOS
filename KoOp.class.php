@@ -10,143 +10,108 @@
  */
 
 
-class KoOp extends StudipPlugin implements SystemPlugin
+class KoOp extends StudipPlugin implements StandardPlugin, SystemPlugin
 {
-    
-    const KOOP_ROLE = 'KoOp';
-    
+        
     public function __construct()
     {
         parent::__construct();
-        global $perm;
-        
-        //error_log(RolePersistence::getAllRoles()[0]);
-        //if(RolePersistence::isAssignedRole($GLOBALS['user']->user_id, 'root')){
+        // Add icon to main navigation with link to /index
         $navigation = new Navigation('teachUOS');
         $navigation->setImage(Icon::create('doctoral_cap', 'navigation'));
         //$navigation->setImage($GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->getPluginPath() . '/assets/images/koop.png');
         $navigation->setURL(PluginEngine::getURL($this, array(), 'index'));
-        
-        //            $item = new Navigation(_('Blick in die Fächer'), PluginEngine::getURL($this, array(), 'index'));
-        //            $navigation->addSubNavigation('index', $item);
-        
-        //page 1
-        $item = new Navigation(_('Blick in die Fächer'), PluginEngine::getURL($this, array(), 'pages/subjects'));
-        
-        $sub_nav = new Navigation(_('Zurück'), PluginEngine::getURL($this, array(), 'index'));
-        $sub_nav->setImage(Icon::create('globe', 'navigation'));
-        $item->addSubNavigation('index', $sub_nav);
-        
-        $navigation->addSubNavigation('subjects', $item);
-        
-        //page 2
-        $item = new Navigation(_('Digitaler Unterricht'), PluginEngine::getURL($this, array(), 'pages/digital_teaching'));
-        
-        $sub_nav = new Navigation(_('Zurück'), PluginEngine::getURL($this, array(), 'index'));
-        $sub_nav->setImage(Icon::create('globe', 'navigation'));
-        $item->addSubNavigation('index', $sub_nav);
-        
-        $navigation->addSubNavigation('digital_teaching', $item);
-        
-        //page 3
-        $item = new Navigation(_('Vom Studium in die Praxis'), PluginEngine::getURL($this, array(), 'pages/study_to_practice'));
-        
-        $sub_nav_6 = new Navigation(_('Zurück'), PluginEngine::getURL($this, array(), 'index'));
-        $sub_nav_6->setImage(Icon::create('globe', 'navigation'));
-        $item->addSubNavigation('index', $sub_nav_6);
-        
-        
-        $sub_nav = new Navigation(_('Studienverlaufspläne'), PluginEngine::getURL($this, array(), 'pages/studyplan'));
-        $sub_nav->setImage(Icon::create('assessment', 'navigation'));
-        $item->addSubNavigation('studyplan', $sub_nav);
-        
-        $sub_nav_2 = new Navigation(_('Professionalisierung'), PluginEngine::getURL($this, array(), 'pages/professional'));
-        $sub_nav_2->setImage(Icon::create('consultation', 'navigation'));
-        $item->addSubNavigation('professional', $sub_nav_2);
-        
-        $sub_nav_3 = new Navigation(_('Rund ums Lehramtsstudium'), PluginEngine::getURL($this, array(), 'pages/about_teaching'));
-        $sub_nav_3->setImage(Icon::create('group2', 'navigation'));
-        $item->addSubNavigation('about_teaching', $sub_nav_3);
-        
-        $sub_nav_4 = new Navigation(_('Lehrformate und Methoden'), PluginEngine::getURL($this, array(), 'pages/forms_and_methods'));
-        $sub_nav_4->setImage(Icon::create('globe', 'navigation'));
-        $item->addSubNavigation('forms_and_methods', $sub_nav_4);
-        
-        $sub_nav_5 = new Navigation(_('Unterrichtsplanung'), PluginEngine::getURL($this, array(), 'pages/planner'));
-        $sub_nav_5->setImage(Icon::create('globe', 'navigation'));
-        $item->addSubNavigation('planner', $sub_nav_5);
-        
-        $navigation->addSubNavigation('study_to_practice', $item);
-        
-        //page 4
-        $item = new Navigation(_('Mein Weg durchs Studium'), PluginEngine::getURL($this, array(), 'pages/my_way'));
-        
-        $sub_nav_8 = new Navigation(_('Zurück'), PluginEngine::getURL($this, array(), 'index'));
-        $sub_nav_8->setImage(Icon::create('globe', 'navigation'));
-        $item->addSubNavigation('index', $sub_nav_8);
-        
-        $sub_nav = new Navigation(_('Studienverlaufspläne'), PluginEngine::getURL($this, array(), 'pages/studyplan'));
-        $sub_nav->setImage(Icon::create('assessment', 'navigation'));
-        $item->addSubNavigation('studyplan', $sub_nav);
-        
-        $sub_nav_2 = new Navigation(_('Beratungsangebote'), PluginEngine::getURL($this, array(), 'pages/consulting'));
-        $sub_nav_2->setImage(Icon::create('consultation', 'navigation'));
-        $item->addSubNavigation('consulting', $sub_nav_2);
-        
-        $sub_nav_3 = new Navigation(_('Praktika'), PluginEngine::getURL($this, array(), 'pages/practical training'));
-        $sub_nav_3->setImage(Icon::create('group2', 'navigation'));
-        $item->addSubNavigation('practical training', $sub_nav_3);
-        
-        $sub_nav_4 = new Navigation(_('Auslandsaufenthalt'), PluginEngine::getURL($this, array(), 'pages/abroad'));
-        $sub_nav_4->setImage(Icon::create('globe', 'navigation'));
-        $item->addSubNavigation('abroad', $sub_nav_4);
-        
-        $sub_nav_5 = new Navigation(_('Fachschaften'), PluginEngine::getURL($this, array(), 'pages/council'));
-        $sub_nav_5->setImage(Icon::create('globe', 'navigation'));
-        $item->addSubNavigation('council', $sub_nav_5);
-        
-        $sub_nav_6 = new Navigation(_('Fachstudienberater'), PluginEngine::getURL($this, array(), 'pages/subject_consultant'));
-        $sub_nav_6->setImage(Icon::create('globe', 'navigation'));
-        $item->addSubNavigation('subject_consultant', $sub_nav_6);
-        
-        $sub_nav_7 = new Navigation(_('Zertifikate'), PluginEngine::getURL($this, array(), 'pages/cert'));
-        $sub_nav_7->setImage(Icon::create('globe', 'navigation'));
-        $item->addSubNavigation('cert', $sub_nav_7);
-        
-        $navigation->addSubNavigation('my_way', $item);
-        
-        
-        //my_way2 page
-        $item = new Navigation(_('my_way2'), PluginEngine::getURL($this, array(), 'pages/my_way2'));
-        $sub_nav = new Navigation(_('Zur�ck'), PluginEngine::getURL($this, array(), 'index'));
-        $sub_nav->setImage(Icon::create('globe', 'navigation'));
-        $item->addSubNavigation('index', $sub_nav);
-        $navigation->addSubNavigation('my_way2', $item);
-        
-        
-        //study_to_practice2 page
-        $item = new Navigation(_('Vom Studium in die Praxis'), PluginEngine::getURL($this, array(), 'pages/study_to_practice2'));
-        $navigation->addSubNavigation('study_to_practice2', $item);
-        
-        //Unterricht2 page
-        $item = new Navigation(_('Digitaler Unterricht'), PluginEngine::getURL($this, array(), 'pages/digital_teaching2'));
-        $navigation->addSubNavigation('digital_teaching2', $item);
-        
-        
         Navigation::addItem('/koop', $navigation);
-        //}
-        if (Course::findCurrent()->id == 'a4204c684df5c46ec74a6f6420f1d81d'){
-            Navigation::activateItem('koop/subjects');
-            //PageLayout::addStylesheet($this->getPluginURL().'/assets/koop_sem.css');
-            PageLayout::addScript($this->getPluginURL().'/assets/koop.js');
-        }
+        
+        // Add one subnavigation for consistency reasons
+        $teachUOS = new Navigation('teachUOS', PluginEngine::getURL($this, array(), 'index'));
+        $navigation->addSubNavigation('teachUOS', $teachUOS);
     }
-    
-    public function initialize ()
+
+    public function before_filter(&$action, &$args)
     {
+        parent::before_filter($action, $args);
+    }
+
+    public function getPluginName()
+    {
+    	return 'Ko.OP';
+    }
+
+    //search for course id where koop plugin is active
+    public function getKoopCourse()
+    {
+        $db = DBManager::get();
+        $koopCourseID = $db->fetchOne('SELECT `range_id` FROM `plugins_activated` WHERE `pluginid` = ? AND `state` = 1', [$this->getPluginId()]);
+        return $koopCourseID['range_id'];
+    }
+
+    //search for courseware ids of koop blocks
+    public function getKoopBlockIDs()
+    {
+        // get course_id of koop course
+        $koop_course_id = $this->getKoopCourse();
+
+        // find block_ids by title
+        $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $koop_course_id, 'DURCH\'S STUDIUM']);
+        $block_study_id = $block->id;
+        $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $koop_course_id, 'IN DIE PRAXIS']);
+        $block_practice_id = $block->id;
+        $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $koop_course_id, 'DIGITALE MEDIEN']);
+        $block_media_id = $block->id;
+        $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $koop_course_id, 'BLICK IN DIE FÄCHER']);
+        $block_subjects_id = $block->id;
+        return array("study" => $block_study_id, "practice" => $block_practice_id, "media" => $block_media_id, "subjects" => $block_subjects_id);
     }
     
-    public function perform($unconsumed_path)
+    /**
+     * STANDARDPLUGIN
+     * Liefert ein Template, das auf der Kurzinfoseite der Veranstaltung bzw. Einrichtung angezeigt wird.
+     */
+    public function getInfoTemplate($course_id)
+    {
+        return null;
+    }
+
+    /**
+     * STANDARDPLUGIN
+     * Liefert ein Navigationsobjekt für das Icon des Plugins auf der Seite "Meine Veranstaltungen".
+     * Wenn das Plugin dort nicht angezeigt werden soll, sollte die Methode NULL liefertn.
+     */
+    public function getIconNavigation($course_id, $last_visit, $user_id = null)
+    {
+        return null;
+    }
+
+    /**
+     * Returns a navigation for the tab displayed in the course.
+     * @param string $course_id of the course
+     * @return \Navigation
+     */
+    public function getTabNavigation($course_id)
+    {
+        //Link to overview page in the course
+        $tab = new Navigation($this->getPluginName(), PluginEngine::getURL($this, array(), 'admin'));
+        //$tab->setImage(Icon::create('blubber', Icon::ROLE_INFO_ALT));
+        return [$this->getPluginName() => $tab];
+    }
+
+    /**
+     * Make plugin only activatable inside of courses for users with root permissions
+     */
+    public function isActivatableForContext(Range $context)
+    {
+        return $GLOBALS['perm']->have_perm('root');
+    }
+
+
+
+    /**
+     * -------------------------------------------------------------------------------------------------------------------------
+     * TODO: the following functions are unclear (check relevance)
+     */
+        
+    /*public function perform($unconsumed_path)
     {
         $this->setupAutoload();
         $dispatcher = new Trails_Dispatcher(
@@ -156,7 +121,6 @@ class KoOp extends StudipPlugin implements SystemPlugin
             );
         $dispatcher->plugin = $this;
         $dispatcher->dispatch($unconsumed_path);
-        
     }
     
     private function setupAutoload()
@@ -168,5 +132,5 @@ class KoOp extends StudipPlugin implements SystemPlugin
                 include_once __DIR__ . $class . '.php';
             });
         }
-    }
+    }*/
 }
