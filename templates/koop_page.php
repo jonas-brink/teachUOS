@@ -33,10 +33,18 @@
             </div>
         </div> 
         
-   </div> 
-   <div class='koop-text-behalter'>
-
-   </div>
+    </div> 
+    <div class='koop-text-behalter'>
+        <div id='header-read-mode'>
+            <a href="<?= PluginEngine::getURL('koop/index', []) ?>" >
+                <? if ((array_search($selected_id, $id_arr) == "study") || (array_search($selected_parent_id, $id_arr) == "study") || (array_search($selected_grandparent_id, $id_arr) == "study")) : ?>
+                    <img id='favorite-star' src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/non_favorites.png" />
+                <? else : ?>
+                    <img id='favorite-star' src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/favorit.png" />
+                <? endif ?>
+            </a>
+        </div>
+    </div>
 </div>
 
 <script>

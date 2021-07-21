@@ -17,7 +17,7 @@ $(document).ready(function () {
 		});
 	});
 
-	$("#courseware").prependTo(".koop-text-behalter");
+	$("#courseware").appendTo(".koop-text-behalter");
 	$(".koop-sub-content").appendTo("#layout_content");
 	$("#courseware").css("padding-left", "0");
 
