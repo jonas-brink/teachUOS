@@ -493,7 +493,11 @@ and open the template in the editor.
         display: block;
     }
 
-    /* hide second navbar at the top */
+    /* hide second navbar at the top (first studip version) */
     .tabs_wrapper {
+        display: none !important;
+    }
+    /* hide second navbar at the top (second studip version) */
+    ul#tabs {
         display: none !important;
     }
