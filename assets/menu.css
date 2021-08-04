@@ -100,9 +100,6 @@
 .chapter.selected div{
 	margin-bottom: 22px;
 }
-.section.selected{
-		  border-bottom: 4px double #28497c !important;
-}
 
 .active-section{
 	max-width: 1500px !important;
@@ -112,6 +109,7 @@
     
 .title h1{
     color:#28497C !important;
+    width: 30%;
 }
 
 .title {
@@ -182,14 +180,36 @@ a.sub_kacheln img.top:hover {
 	display: none !important;
 }
 
+/* style of links for all Sections on each courseware page */
+ol.active-subchapter a.navigate {
+    border: 2px solid #28497C !important;
+    border-radius: 10px !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+}
+
+ol.active-subchapter a.navigate:hover {
+    color: white !important;
+    background-color: #28497C !important;
+}
+
+/* style of selected links (Sections) */
+li.section.selected a.navigate{
+	color: white !important;
+    background-color: #28497C !important;
+}
+
 a.navigate{
-        color: #ffffff !important;
+    color: #ffffff !important;
 }
 
 ol.active-subchapter {
     list-style: none !important;
     float: right;
     padding: 0 !important;
+    height: auto !important;
 }
 
 ol.active-subchapter li  > a {
@@ -211,28 +231,43 @@ ol.subchapters{
 	line-height: 1.82857143;
 }
 
+/* stuck Sections-navbar */
+section#courseware ol.active-subchapter.stuck {
+    top: 26px !important;
+    left: 20% !important;
+}
+
+
 #courseware{
 	max-width: 100% !important;
     margin-left: 10%;
+    margin-right: 10%;
+}
+
+section.block {
+    clear: right;
+    padding-top: 5px;
 }
                 
 .koop-text-behalter{
-    width:60%;
-    float:left;
+    width: 83%;
+    float: left;
 }
 
 #header-read-mode {
     height: 80px;
-    width: 10%;
+    width: 100%;
     text-align: center;
     display: inline-block;
 }
 
-#favorite-star {
+#favourite-star {
     max-width: 60%;
     max-height: 60%;
-    margin-top: 22%;
+    margin-top: 2%;
+    margin-right: 3.5%;
     cursor: pointer;
+    float: right;
 }
 
 .koop-text-behalter h3 {

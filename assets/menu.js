@@ -32,6 +32,8 @@ $(document).ready(function () {
 	//1$("ol.subchapters").children(".subchapter:first").hide();
 
 
+	$('ol.active-subchapter').wrap('<div style="width: 70%; float: right;"></div>');
+
 	$("#courseware").show();
 	$(".koop-sub-content").show();
 
