@@ -1,6 +1,8 @@
 <div class="koop-content-centered2 ">
     <div class="koop-content2 verlauf">
-        <img align="right" style="cursor: pointer;margin: 34px;" onclick="switchFullscreen()" width="72"  src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A0_forum.svg' ?>" />
+        <a href="<?= PluginEngine::getURL('koop/pages/favourites') ?>" >
+            <img align="right" style="cursor: pointer;margin: 34px;" width="72" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A0_forum.svg' ?>" />
+        </a>
         
         <div class="teachuos_logo">
             <img id='teachuos-logo2' style='width:290px' src='<?= $GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_teachUOS.svg' ?>'/>
@@ -13,18 +15,13 @@
                     <p class="index_comic_txt">DURCH'S <b>STUDIUM</b></p>
                 </a>
             </div>
-            
-            
             <div class="index_comic">
-                <a class='koop-index-navigation hover_image index_comic1' href="<?= PluginEngine::getURL('koop/pages/cw', ['cid' => $koop_course_id, 'selected' => $practice_block_id]) ?>" >
-                    <img class="bottom" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_praxis_hover.svg' ?>" />
-                    <img class="top" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_praxis.svg' ?>" />
-                    <p class="index_comic_txt">IN DIE <b>PRAXIS</b></p>
-                </a> 
-                
-                
+                <a class='koop-index-navigation hover_image index_comic1' href="<?= PluginEngine::getURL('koop/pages/cw', ['cid' => $koop_course_id, 'selected' => $subjects_block_id]) ?>" >
+                    <img class="bottom" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_faecher_hover.svg' ?>" />
+                    <img class="top" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_faecher.svg' ?>" />
+                    <p class="index_comic_txt">BLICK IN DIE <b>FÄCHER</b></p>
+                </a>
             </div>
-            
             <div class="index_comic">
                 <a class='koop-index-navigation hover_image index_comic3' href="<?= PluginEngine::getURL('koop/pages/cw', ['cid' => $koop_course_id, 'selected' => $media_block_id]) ?>" >
                     <img class="bottom" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_digital_hover.svg' ?>" />
@@ -33,11 +30,11 @@
                 </a>
             </div>
             <div class="index_comic">
-                <a class='koop-index-navigation hover_image index_comic4' href="<?= PluginEngine::getURL('koop/pages/cw', ['cid' => $koop_course_id, 'selected' => $subjects_block_id]) ?>" >
-                    <img class="bottom" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_faecher_hover.svg' ?>" />
-                    <img class="top" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_faecher.svg' ?>" />
-                    <p class="index_comic_txt">BLICK IN DIE <b>FÄCHER</b></p>
-                </a>
+                <a class='koop-index-navigation hover_image index_comic4' href="<?= PluginEngine::getURL('koop/pages/cw', ['cid' => $koop_course_id, 'selected' => $practice_block_id]) ?>" >
+                    <img class="bottom" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_praxis_hover.svg' ?>" />
+                    <img class="top" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_praxis.svg' ?>" />
+                    <p class="index_comic_txt">IN DIE <b>PRAXIS</b></p>
+                </a> 
             </div>
         </div>
         </div>   
@@ -136,7 +133,7 @@
 }
 
 .index_comic1 p{
-    margin-left: 148px;
+    margin-left: 127px;
     width: max-content;
 }
 .index_comic2 p{
@@ -144,18 +141,18 @@
     width: max-content;
 }
 .index_comic3 p{
-    margin-left: 122px;
+    margin-left: 110px;
     width: max-content;
 }
 .index_comic4 p{
-    margin-left: 72px;
+    margin-left: 97px;
     width: max-content;
 }
 
 
 .index_comic1 img{
     width:210px;
-    margin-top: 6.44px;
+    margin-top: 20px;
     margin-left: 87px;
     /* margin-left: 3.3%;*/
     margin-right: auto;
@@ -212,7 +209,7 @@
 
 .index_comic4 img{
     width:214px;
-    margin-top: 19.5px;
+    margin-top: 7px;
     margin-left: 35px;
     /*margin-top: 83px;
     /* margin-left: 3.8%;*/

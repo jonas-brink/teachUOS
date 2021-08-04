@@ -36,13 +36,15 @@
     </div> 
     <div class='koop-text-behalter'>
         <div id='header-read-mode'>
-            <a href="<?= PluginEngine::getURL('koop/index', []) ?>" >
-                <? if ((array_search($selected_id, $id_arr) == "study") || (array_search($selected_parent_id, $id_arr) == "study") || (array_search($selected_grandparent_id, $id_arr) == "study")) : ?>
-                    <img id='favorite-star' src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/non_favorites.png" />
-                <? else : ?>
-                    <img id='favorite-star' src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/favorit.png" />
-                <? endif ?>
-            </a>
+            <? if(!$isFavourite) : ?>
+                <a href="<?= PluginEngine::getURL('koop/pages/addToFavourites', ['selected' => Request::int('selected')]) ?>">
+                    <img id='favourite-star' src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/non_favourites.png" />
+                </a>
+            <? else : ?>
+                <a href="<?= PluginEngine::getURL('koop/pages/removeFromFavourites', ['selected' => Request::int('selected')]) ?>">
+                  <img id='favourite-star' src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/favourit.png" />
+                </a>
+            <? endif ?>
         </div>
     </div>
 </div>
@@ -62,5 +64,5 @@
                 $( this ).hide();
             }
         });
-    });
+    }); 
 </script>

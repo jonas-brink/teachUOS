@@ -16,16 +16,125 @@ class PagesController extends StudipController
         PageLayout::addStylesheet($this->plugin->getPluginURL() . '/assets/koop.css');
         // Activate icon in main navigation + subnavigation
         Navigation::activateItem('koop/teachUOS');
-        Navigation::getItem('course/mooc_courseware')->setActive(false);
     }
 
-    public function index_action()
+    public function favourites_action()
     {
+        $db = DBManager::get();
+
+        //get user_id
+        $user_id = $GLOBALS['user']->id;
+        //get course_id
+        $this->course_id = $this->plugin->getKoopCourse();
+        //get favourites
+        $favourites = $db->fetchAll("SELECT * FROM `koop_favourites` WHERE user_id=? AND course_id=?", [$user_id, $this->course_id]);
+
+        $this->favourites_titles = array();
+        for ($i = 0; $i < count($favourites); $i++) {
+            $block_id = intval($favourites[$i]['block_id']);
+            $block = \Mooc\DB\Block::find($block_id);
+            array_push($this->favourites_titles, [$block_id, $block->title]);
+        }
+    }
+
+    private function isFavourite($block_id)
+    {
+        $db = DBManager::get();
+
+        //get user_id
+        $user_id = $GLOBALS['user']->id;
+        //get course_id
+        $course_id = Request::option('cid');
+        //get position of new element
+        $numFavourites = $db->fetchOne("SELECT COUNT(*) AS listLength FROM `koop_favourites` WHERE user_id=? AND course_id=?", [$user_id, $course_id]);
+        $position = intval($numFavourites['listLength']);
+        //get block_id
+        //$block_id = Request::int('selected');
+
+        //check if type of selected block is 'Section'
+        $block = \Mooc\DB\Block::find($block_id);
+        while ($block->type !== 'Section')
+        {
+            $block = \Mooc\DB\Block::findOneBySQL('parent_id=? AND position=?', [$block_id, 0]);
+            $block_id = $block->id;
+        }
+        
+        $queryResult = $db->fetchOne("SELECT COUNT(*) AS isFavourite FROM `koop_favourites` WHERE user_id=? AND course_id=? AND block_id=?", [$user_id, $course_id, $block_id]);
+        $isFavourite = intval($queryResult['isFavourite']);
+        
+        if($isFavourite)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public function removeFromFavourites_action()
+    {
+        $db = DBManager::get();
+
+        //get user_id
+        $user_id = $GLOBALS['user']->id;
+        //get course_id
+        $course_id = Request::option('cid');
+        //get position of new element
+        $numFavourites = $db->fetchOne("SELECT COUNT(*) AS listLength FROM `koop_favourites` WHERE user_id=? AND course_id=?", [$user_id, $course_id]);
+        $position = intval($numFavourites['listLength']);
+        //get block_id
+        $block_id = Request::int('selected');
+
+        //check if block_id is marked as favourite
+        if($this->isFavourite($block_id))
+        {
+            //delete favourite from db
+            $db->execute('DELETE FROM `koop_favourites` WHERE user_id=? AND course_id=? AND block_id=?', [$user_id, $course_id, $block_id]);
+        }
+
+        //TODO: Update positions after removing
+
+        //TODO: redirect or open favourites?
+        $this->redirect(PluginEngine::getURL($this->plugin, ['cid' => $course_id, 'selected' => $block_id], 'pages/cw'));
+    }
+
+    public function addToFavourites_action()
+    {
+        $db = DBManager::get();
+
+        //get user_id
+        $user_id = $GLOBALS['user']->id;
+        //get course_id
+        $course_id = Request::option('cid');
+        //get position of new element
+        $numFavourites = $db->fetchOne("SELECT COUNT(*) AS listLength FROM `koop_favourites` WHERE user_id=? AND course_id=?", [$user_id, $course_id]);
+        $position = intval($numFavourites['listLength']);
+        //get block_id
+        $block_id = Request::int('selected');
+
+        //check if block_id is not already marked as favourite
+        if(!$this->isFavourite($block_id))
+        {
+            //check if type of selected block is 'Section'
+            $block = \Mooc\DB\Block::find($block_id);
+            while ($block->type !== 'Section')
+            {
+                $block = \Mooc\DB\Block::findOneBySQL('parent_id=? AND position=?', [$block_id, 0]);
+                $block_id = $block->id;
+            }
+
+            //add favourite to db
+            $db->execute('INSERT INTO `koop_favourites` (user_id, course_id, block_id, position) VALUES (?, ?, ?, ?)', [$user_id, $course_id, $block_id, $position]);
+        }
+
+        //TODO: redirect or open favourites?
+        $this->redirect(PluginEngine::getURL($this->plugin, ['cid' => $course_id, 'selected' => $block_id], 'pages/cw'));
 
     }
 
     public function cw_action()
     {
+        //deactivate Veranstaltungen / Courseware in main menu (navigation) 
+        Navigation::getItem('course/mooc_courseware')->setActive(false);
+
         // Hide standard courseware
         PageLayout::addStyle('.cw-sidebar { display: none; }');
         PageLayout::addStyle('.breadcrumb { display: none; }');
@@ -99,6 +208,9 @@ class PagesController extends StudipController
         // get grandparent of selected courseware block
         $selected_grandparent_id = \Mooc\DB\Block::find($selected_parent_id)->parent_id;
         $koop_page_template->set_attribute('selected_grandparent_id', $selected_grandparent_id);
+        
+        //check if selected block_id is marked as favourite
+        $koop_page_template->set_attribute('isFavourite', $this->isFavourite($selected_id));
 
 
         // render template
