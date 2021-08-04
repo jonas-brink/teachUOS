@@ -492,3 +492,8 @@ and open the template in the editor.
         background-repeat: no-repeat;
         display: block;
     }
+
+    /* hide second navbar at the top */
+    .tabs_wrapper {
+        display: none !important;
+    }
