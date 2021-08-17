@@ -233,8 +233,7 @@ ol.subchapters{
 
 /* stuck Sections-navbar */
 section#courseware ol.active-subchapter.stuck {
-    top: 26px !important;
-    left: 20% !important;
+    position: relative !important;
 }
 
 
