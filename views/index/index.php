@@ -11,29 +11,29 @@
             <div class="index_comic">
                 <a class='koop-index-navigation hover_image index_comic2' href="<?= PluginEngine::getURL('koop/pages/cw', ['cid' => $koop_course_id, 'selected' => $study_block_id]) ?>" >
                     <img class="bottom" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_studium_hover.svg' ?>" />
-                    <img class="top" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_studium.svg' ?>" />
-                    <p class="index_comic_txt">DURCH'S <b>STUDIUM</b></p>
+                    <img class="top study_link" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_studium.svg' ?>" />
+                    <p id="study_txt" class="index_comic_txt study_link">DURCH'S <b id="study_b">STUDIUM</b></p>
                 </a>
             </div>
             <div class="index_comic">
                 <a class='koop-index-navigation hover_image index_comic1' href="<?= PluginEngine::getURL('koop/pages/cw', ['cid' => $koop_course_id, 'selected' => $subjects_block_id]) ?>" >
                     <img class="bottom" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_faecher_hover.svg' ?>" />
-                    <img class="top" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_faecher.svg' ?>" />
-                    <p class="index_comic_txt">BLICK IN DIE <b>FÄCHER</b></p>
+                    <img class="top subjects_link" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_faecher.svg' ?>" />
+                    <p id="subjects_txt" class="index_comic_txt subjects_link">BLICK IN DIE <b id="subjects_b">FÄCHER</b></p>
                 </a>
             </div>
             <div class="index_comic">
                 <a class='koop-index-navigation hover_image index_comic3' href="<?= PluginEngine::getURL('koop/pages/cw', ['cid' => $koop_course_id, 'selected' => $media_block_id]) ?>" >
                     <img class="bottom" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_digital_hover.svg' ?>" />
-                    <img class="top" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_digital.svg' ?>" />
-                    <p class="index_comic_txt">DIGITALE <b>MEDIEN</b></p>
+                    <img class="top media_link" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_digital.svg' ?>" />
+                    <p id="media_txt" class="index_comic_txt media_link">DIGITALE <b id="media_b">MEDIEN</b></p>
                 </a>
             </div>
             <div class="index_comic">
                 <a class='koop-index-navigation hover_image index_comic4' href="<?= PluginEngine::getURL('koop/pages/cw', ['cid' => $koop_course_id, 'selected' => $practice_block_id]) ?>" >
                     <img class="bottom" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_praxis_hover.svg' ?>" />
-                    <img class="top" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_praxis.svg' ?>" />
-                    <p class="index_comic_txt">IN DIE <b>PRAXIS</b></p>
+                    <img class="top practice_link" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_praxis.svg' ?>" />
+                    <p id="practice_txt" class="index_comic_txt practice_link">IN DIE <b id="practice_b">PRAXIS</b></p>
                 </a> 
             </div>
         </div>
@@ -119,12 +119,18 @@
 */
 .index_comic_txt{
     position: absolute;
-    /*margin-left: 4.5%;*/
-    margin-top: 133px;
-    /*margin-top: 250px;*/
-    /*color: #28497C; */
+    margin-top: 128px !important;
     color: #97ACE0;
     font-size: 13px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+
+.index_comic_txt:hover{
+    background-color: #28497c;
 }
 
 .index_comic_txt b{
@@ -154,10 +160,8 @@
     width:210px;
     margin-top: 20px;
     margin-left: 87px;
-    /* margin-left: 3.3%;*/
     margin-right: auto;
-    /*margin-left: 30%;
-    */
+    padding-bottom: 10px;
 }
 
 .light {
@@ -181,46 +185,27 @@
     width:212px;
     margin-top: -11px;
     margin-left: 105px;
-    /*margin-top: 62px;
-    margin-left: 2.9%;*/
     margin-right: auto;
-    
-    /*
-    margin-left: 15%;
-    
-    float:left;*/
     color: #ffffff;
+    padding-bottom: 10px;
 }
 
 .index_comic3 img{
     width:206px;
     margin-top: 24.5px;
     margin-left: 54px;
-    /*margin-top: 91px;
-        margin-left: 3.4%;*/
     margin-right: auto;
-    /*
-    margin-left: 10%;
-    
-    float:left;
-    */
     color: #ffffff;
+    padding-bottom: 10px;
 }
 
 .index_comic4 img{
     width:214px;
     margin-top: 7px;
     margin-left: 35px;
-    /*margin-top: 83px;
-    /* margin-left: 3.8%;*/
-    margin-right: auto;
-    /*
-    margin-left: 10%;
-    
-    float:left;
-    */
-    
+    margin-right: auto;    
     color: #ffffff;
+    padding-bottom: 10px;
 }
 
 
@@ -282,6 +267,31 @@ a.koop-index-navigation{
     padding:0px;
 }
 
+/* CSS background transitions */
+#study_txt {
+    transition: background-color 0.5s ease;
+}
+#subjects_txt {
+    transition: background-color 0.5s ease;
+}
+#media_txt {
+    transition: background-color 0.5s ease;
+}
+#practice_txt {
+    transition: background-color 0.5s ease;
+}
 
+#study_b {
+    transition: color 0.5s ease;
+}
+#subjects_b {
+    transition: color 0.5s ease;
+}
+#media_b {
+    transition: color 0.5s ease;
+}
+#practice_b {
+    transition: color 0.5s ease;
+}
 
 </style>

@@ -20,6 +20,9 @@ class IndexController extends StudipController
 
     public function index_action()
     {
+        //define js file for layout
+        PageLayout::addScript($this->plugin->getPluginURL() . '/assets/index.js');
+
         // get course_id of koop course for view
         $this->koop_course_id = $this->plugin->getKoopCourse();
         
