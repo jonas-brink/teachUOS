@@ -132,7 +132,7 @@ class PagesController extends StudipController
 
     public function cw_action()
     {
-        //deactivate Veranstaltungen / Courseware in main menu (navigation) 
+        // Deactivate Veranstaltungen / Courseware in main menu (navigation) 
         Navigation::getItem('course/mooc_courseware')->setActive(false);
 
         // Hide standard courseware
@@ -149,16 +149,13 @@ class PagesController extends StudipController
         PageLayout::addStyle('.handle { display: none; }');
         PageLayout::addStyle('.no-content { display: none; }');
 
-        // add new courseware style
+        // Add new courseware style
         PageLayout::addStylesheet($this->plugin->getPluginURL() . '/assets/pages.css');
 
-
-
-
-        // add koop menu
-        // build sidebar around courseware with koop_page template
+        // Add koop menu
+        // Build sidebar around courseware with koop_page template
         PageLayout::addBodyElements($this->get_koop_content());
-        // enable new courseware style
+        // Enable new courseware style
         PageLayout::addScript($this->plugin->getPluginURL() . '/assets/pages.js');
 
         // TODO: check use case / relevance
@@ -166,11 +163,10 @@ class PagesController extends StudipController
         require_once 'app/controllers/studip_controller.php';
         require_once 'app/controllers/authenticated_controller.php';
 
-
         // get information from the courseware plugin
         $Courseware_Plugin = \PluginManager::getInstance()->getPlugin('Courseware');
 
-        // Check if Courseware is enabled
+        // TODO: Check if Courseware is enabled
         // if($Courseware_Plugin['enabled']) {
         // **Courseware ist angeschaltet...**
         // }
@@ -212,10 +208,8 @@ class PagesController extends StudipController
         //check if selected block_id is marked as favourite
         $koop_page_template->set_attribute('isFavourite', $this->isFavourite($selected_id));
 
-
         // render template
         $menu_content = $koop_page_template->render();
-
         return $menu_content;
     }
 }

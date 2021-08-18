@@ -1,5 +1,5 @@
 /*
- hides courseware navigation and shows koop menus in sidebar
+	Hides courseware navigation and shows koop menus in sidebar
 */
 /*
 	Created on : 11.05.2020, 11:01:38
@@ -25,12 +25,6 @@ $(document).ready(function () {
 
 	// add header to side menu
 	$(".chapter.selected").insertAfter("#chapterImg_container");
-
-	// TODO: Why this ???
-	// hide first sub section in menu
-	//$(".active-subchapter").children(".section:first").hide();
-	//1$("ol.subchapters").children(".subchapter:first").hide();
-
 
 	$('ol.active-subchapter').wrap('<div style="width: 70%; float: right;"></div>');
 

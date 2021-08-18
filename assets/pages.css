@@ -1,5 +1,5 @@
 /*
- Koop menus in sidebar for courseware pages (layout 2) 
+    Layout for courseware content on second layer
 */
 /* 
     Created on : 13.07.2020, 10:21:42
@@ -11,12 +11,10 @@
 	/*for double scroll bar*/
 	overflow: hidden;
 }
+
 #layout_container{
 	padding:0px !important;
 	min-width: 1000px !important;
-}
-#layout_page{
-	/*min-width: 1200px !important;*/
 }
 
 .margin_center{
@@ -43,21 +41,27 @@
      text-align: center;
      width: 100%;     
 }
+
 .koop-footer22 img{
 	margin-bottom: 37px;
 }
+
 .light {
   font-weight: 300;
 }
+
 .regular {
   font-weight: 400;
 }
+
 .bold {
   font-weight: 700;
 }
+
 .black {
   font-weight: 900;
 }
+
 .fontsize13 {
   font-size: 13px;
 }
@@ -89,8 +93,8 @@
 }
 
 .chapter.selected b{
-		    color: #83a3d1;
-		    font-weight: normal;
+    color: #83a3d1;
+    font-weight: normal;
 }
 
 .chapter.selected{
@@ -128,21 +132,18 @@
 
 .width50floatleft a{
 	margin-right: 5px;
-	/*margin-bottom: 5px;*/
 }
 
 .width50floatright a{
 	margin-left: 5px;
-	/*margin-bottom: 5px;*/
 }
 
 a.sub_kacheln {
     width: 75px;
     height: 75px;
-    /*margin-left: 1.9em;
-    margin-top: 2.1em;*/
     position: relative;
 }
+
 a.sub_kacheln img {
     position:absolute;
     left:0;
@@ -151,6 +152,7 @@ a.sub_kacheln img {
     -o-transition: opacity 0.7s ease-in-out;
     transition: opacity 0.7s ease-in-out;
 }
+
 a.sub_kacheln img.top:hover {
     opacity:0;
 }
@@ -236,7 +238,6 @@ section#courseware ol.active-subchapter.stuck {
     position: relative !important;
 }
 
-
 #courseware{
 	max-width: 100% !important;
     margin-left: 10%;
@@ -272,13 +273,9 @@ section.block {
 .koop-text-behalter h3 {
     font-size: 2.2em;
     margin-bottom: 1em;
-    /*font-weight:normal;
-    text-transform: uppercase;
-    /*color: #28497c;*/
 }
 
 .koop-sub-content{
-    /*margin-top: 8em;*/
     height: 100%;
 }
 
@@ -292,15 +289,8 @@ section.block {
     width: 370px;
     height: 52px;
     margin-left: -35px;
-   /* 
-    margin-bottom: 4.5em;
-    margin-top: -8em;*/
     position: relative;
 }
-
-
-
-
 
 #layout-sidebar {
     display: none;
@@ -347,6 +337,7 @@ section.block {
     margin: 15px;
     padding: 20px;
 }
+
 .flex-container-smallbox ul {
     list-style: none;
     padding-left: 0px;

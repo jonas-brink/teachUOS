@@ -1,15 +1,5 @@
 <?php
 
-/**
- * Doktorandenverwaltung.class.php
- *
- * ...
- *
- * @author  Annelene Sudau <asudau@uos.de>
- * @version 0.1a
- */
-
-
 class KoOp extends StudipPlugin implements StandardPlugin, SystemPlugin
 {
         
@@ -38,7 +28,7 @@ class KoOp extends StudipPlugin implements StandardPlugin, SystemPlugin
     	return 'Ko.OP';
     }
 
-    //search for course id where koop plugin is active
+    // Search for course id where koop plugin is active
     public function getKoopCourse()
     {
         $db = DBManager::get();
@@ -46,13 +36,13 @@ class KoOp extends StudipPlugin implements StandardPlugin, SystemPlugin
         return $koopCourseID['range_id'];
     }
 
-    //search for courseware ids of koop blocks
+    // Search for courseware ids of koop blocks
     public function getKoopBlockIDs()
     {
-        // get course_id of koop course
+        // Get course_id of koop course
         $koop_course_id = $this->getKoopCourse();
 
-        // find block_ids by title
+        // Find block_ids by title
         $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $koop_course_id, 'DURCH\'S STUDIUM']);
         $block_study_id = $block->id;
         $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $koop_course_id, 'IN DIE PRAXIS']);
@@ -103,34 +93,5 @@ class KoOp extends StudipPlugin implements StandardPlugin, SystemPlugin
     {
         return $GLOBALS['perm']->have_perm('root');
     }
-
-
-
-    /**
-     * -------------------------------------------------------------------------------------------------------------------------
-     * TODO: the following functions are unclear (check relevance)
-     */
-        
-    /*public function perform($unconsumed_path)
-    {
-        $this->setupAutoload();
-        $dispatcher = new Trails_Dispatcher(
-            $this->getPluginPath(),
-            rtrim(PluginEngine::getLink($this, array(), null), '/'),
-            'index'
-            );
-        $dispatcher->plugin = $this;
-        $dispatcher->dispatch($unconsumed_path);
-    }
     
-    private function setupAutoload()
-    {
-        if (class_exists('StudipAutoloader')) {
-            StudipAutoloader::addAutoloadPath(__DIR__ . '/models');
-        } else {
-            spl_autoload_register(function ($class) {
-                include_once __DIR__ . $class . '.php';
-            });
-        }
-    }*/
 }
