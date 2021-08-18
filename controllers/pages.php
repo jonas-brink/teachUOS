@@ -150,7 +150,7 @@ class PagesController extends StudipController
         PageLayout::addStyle('.no-content { display: none; }');
 
         // add new courseware style
-        PageLayout::addStylesheet($this->plugin->getPluginURL() . '/assets/menu.css');
+        PageLayout::addStylesheet($this->plugin->getPluginURL() . '/assets/pages.css');
 
 
 
