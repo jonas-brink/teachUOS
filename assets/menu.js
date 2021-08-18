@@ -50,13 +50,4 @@ $(document).ready(function () {
 		text = text.replace("DURCH'S STUDIUM", "<b>DURCH'S</b> STUDIUM");
 		$(this).html(text);
 	});
-
-	// align main images with heading in the first page of level 2 (layout 2)
-	$('img[alt~="-Main"]').css("margin-top", "-100px");
-	$('img[alt~="-Main"]').prependTo($('img[alt~="-Main"]').parent());
-
-	// hide main images for layout 1
-	if ($('.kacheln_header').length) {
-		$('img[alt~="-Main"]').hide();
-	}
 });
