@@ -159,7 +159,7 @@ class PagesController extends StudipController
         // build sidebar around courseware with koop_page template
         PageLayout::addBodyElements($this->get_koop_content());
         // enable new courseware style
-        PageLayout::addScript($this->plugin->getPluginURL() . '/assets/menu.js');
+        PageLayout::addScript($this->plugin->getPluginURL() . '/assets/pages.js');
 
         // TODO: check use case / relevance
         require_once 'vendor/trails/trails.php';
