@@ -43,11 +43,11 @@
             <!-- Show star which indicates whether the page has been marked as a favourite or not -->
             <? if(!$isFavourite) : ?>
                 <a href="<?= PluginEngine::getURL('koop/pages/addToFavourites', ['selected' => Request::int('selected')]) ?>">
-                    <img id='favourite-star' src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/non_favourite.png" />
+                    <img id='favourite-star' src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/non_favourite.svg" />
                 </a>
             <? else : ?>
                 <a href="<?= PluginEngine::getURL('koop/pages/removeFromFavourites', ['selected' => Request::int('selected')]) ?>">
-                  <img id='favourite-star' src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/favourite.png" />
+                  <img id='favourite-star' src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/favourite.svg" />
                 </a>
             <? endif ?>
         </div>
