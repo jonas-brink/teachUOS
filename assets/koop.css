@@ -23,6 +23,26 @@ a.hover_image img.top:hover {
 
 /* ------------------------------------------- */
 
+.light {
+    font-weight: 300;
+}
+
+.regular {
+    font-weight: 400;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.black {
+    font-weight: 900;
+}
+
+.fontsize13 {
+    font-size: 13px;
+}
+
 /* hide second navbar at the top (first studip version) */
 .tabs_wrapper {
     display: none !important;

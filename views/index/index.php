@@ -8,7 +8,7 @@
         
         <!-- teachUOS logo -->
         <div class="teachuos_logo">
-            <img id='teachuos-logo2' style='width:290px' src='<?= $GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_teachUOS.svg' ?>'/>
+            <img id='teachuos-logo2' src='<?= $GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_teachUOS.svg' ?>'/>
         </div>
 
         <!-- Container of the 4 main sections -->
