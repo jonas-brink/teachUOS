@@ -193,7 +193,7 @@ a.koop-index-navigation{
     padding:0px;
 }
 
-/* CSS background transitions */
+/* Main section text transitions */
 #study_txt {
     transition: background-color 0.5s ease;
 }
