@@ -8,6 +8,16 @@ and open the template in the editor.
     Author     : anne
 */
 
+#layout_content{
+	padding: 0px;
+	/*to remove second scrollbar*/
+	overflow: hidden; 
+}
+
+#layout_container{
+	padding: 0px;
+}
+
 /* Cartoon images on index page */
 a.hover_image img {
     position:absolute;
@@ -20,8 +30,6 @@ a.hover_image img {
 a.hover_image img.top:hover {
     opacity:0;
 }
-
-/* ------------------------------------------- */
 
 #page_title_container{
     display: none;

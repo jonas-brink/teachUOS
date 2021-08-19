@@ -6,16 +6,6 @@
     Author     : firas
 */
 
-#layout_content{
-	padding: 0px;
-	/*to remove second scrollbar*/
-	overflow: hidden;
-}
-
-#layout_container{
-	padding: 0px;
-}
-
 #logo_wrapper {
     padding-top: 100px;
     height: 100%;
