@@ -27,7 +27,7 @@
         
         <!-- teachUOS logo at the bottom of the sidebar -->
         <div id="logo_wrapper">
-            <div class="koop-footer22 light">
+            <div class="koop-footer light">
                 <img width="90"  src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/B0_teachUOS1.svg" />
                 <br>
                 VOM ZENTRUM FÜR LEHRERBILDUNG DER

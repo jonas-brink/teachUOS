@@ -7,23 +7,13 @@
 */
 
 #layout_content{
-	padding:0px !important;
-	/*for double scroll bar*/
+	padding: 0px;
+	/*to remove second scrollbar*/
 	overflow: hidden;
 }
 
 #layout_container{
-	padding:0px !important;
-	min-width: 1000px !important;
-}
-
-.margin_center{
-	margin: 0 auto;
-}
-
-/* Hide header of course in second layer */
-#layout_context_title {
-    display: none;
+	padding: 0px;
 }
 
 #logo_wrapper {
@@ -34,18 +24,15 @@
     flex-direction: column;
 }
 
-.koop-footer22{
-     font-size: 9px;
-     color: #ffffff;
-     float: left;
-     text-align: center;
-     width: 100%;     
+.koop-footer{
+    font-size: 9px;
+    color: #ffffff;
 }
 
-.koop-footer22 img{
-	margin-bottom: 37px;
+.koop-footer img{
+	margin-bottom: 35px;
 }
-    
+
 /* Rounded styling of second layer buttons */
 .subchapter div a {
     border: 2px solid white;
@@ -90,55 +77,13 @@
 	padding-top: 0em !important;
 	clear: none !important;
 }
-    
+
 .title h1{
     color:#28497C !important;
 }
 
 .title {
     margin-bottom: 0px !important;
-}
-
-.width50floatleft{
-	width: 50%;
-	float: left;
-}
-
-.width50floatright{
-	width: 50%;
-	float: right;
-}
-
-.width50floatleft a{
-	margin-right: 5px;
-}
-
-.width50floatright a{
-	margin-left: 5px;
-}
-
-a.sub_kacheln {
-    width: 75px;
-    height: 75px;
-    position: relative;
-}
-
-a.sub_kacheln img {
-    position:absolute;
-    left:0;
-    -webkit-transition: opacity 0.7s ease-in-out;
-    -moz-transition: opacity 0.7s ease-in-out;
-    -o-transition: opacity 0.7s ease-in-out;
-    transition: opacity 0.7s ease-in-out;
-}
-
-a.sub_kacheln img.top:hover {
-    opacity:0;
-}
-
-.kacheln_header{
-	z-index: 3;
-	position: relative;
 }
 
 .koop-kacheln-behalter{
@@ -152,16 +97,11 @@ a.sub_kacheln img.top:hover {
     font-weight: 900;
     min-height: 500px;
     min-width: 250px;
-    
     display: flex;
 	flex-direction: column;
 }
 
-.mobile-show-nav-button{
-	display: none !important;
-}
-
-/* style of links for all Sections on each courseware page */
+/* Styling of links for subchapter navigation */
 ol.active-subchapter a.navigate {
     border: 2px solid #28497C !important;
     border-radius: 10px !important;
@@ -176,7 +116,7 @@ ol.active-subchapter a.navigate:hover {
     background-color: #28497C !important;
 }
 
-/* style of selected links (Sections) */
+/* Style of selected links (subchapter navigation) */
 li.section.selected a.navigate{
 	color: white !important;
     background-color: #28497C !important;
@@ -186,23 +126,20 @@ a.navigate{
     color: #ffffff !important;
 }
 
+/* Subchapter navigation */
 ol.active-subchapter {
-    list-style: none !important;
-    float: right;
     padding: 0 !important;
-    height: auto !important;
 }
-
+    
 ol.active-subchapter li  > a {
     color: #28497C !important;
     width: auto !important;
     height: auto !important;
-    border: 0px !important;
-    background-color: #fff !important;
     background-image: none !important;
-    text-transform:uppercase !important;
+    text-transform: uppercase;
 }
 
+/* Sidebar navigation */
 ol.subchapters{
 	font-size: 14px;
 	font-weight: normal;
@@ -212,27 +149,19 @@ ol.subchapters{
 	line-height: 1.82857143;
 }
 
-/* stuck Sections-navbar */
-section#courseware ol.active-subchapter.stuck {
-    position: relative !important;
-}
-
+/* COURSEWARE CONTENT */
 #courseware{
 	max-width: 100% !important;
     margin-left: 10%;
     margin-right: 10%;
 }
 
-section.block {
-    clear: right;
-    padding-top: 5px;
-}
-                
 .koop-text-behalter{
     width: 83%;
     float: left;
 }
 
+/* Header at the top of courseware content */
 #header-read-mode {
     height: 80px;
     width: 100%;
@@ -249,6 +178,12 @@ section.block {
     float: right;
 }
 
+section.block {
+    clear: right;
+    padding-top: 5px;
+}
+
+/* TODO: needed? */
 .koop-text-behalter h3 {
     font-size: 2.2em;
     margin-bottom: 1em;
@@ -258,147 +193,14 @@ section.block {
     height: 100%;
 }
 
-.koop-back{
-	font-size: 12px;
-	color: #ffffff !important;
-}
-
-
-.sub_schwebend_blick img {
-    width: 370px;
-    height: 52px;
-    margin-left: -35px;
-    position: relative;
-}
-
-#layout-sidebar {
-    display: none;
-}
-
-.koop-content {
-    margin: 30px;
-}
-
-.koop-content-centered {
-    margin-left: auto;
-    margin-right: auto;
-    width: 750px;
-}
-
-.koop-content h1 {
-    text-transform: uppercase;
-    margin-bottom: 1em;
-    color: #28497c;
-}
-
+.koop-content h1,
 .koop-content h2 {
     text-transform: uppercase;
     margin-bottom: 1em;
     color: #28497c;
 }
 
-.flex-wrapper{
-    display: flex;
-}
-
-.flex-wrapper-td {
-    flex-direction: column;
-    display: flex;
-}
- 
-.flex-container-smallbox {
-    width: 230px;
-    border: solid 2px #28497c;
-    border-radius: 15px;
-    margin: 15px;
-    padding: 20px;
-}
-
-.flex-container-smallbox ul {
-    list-style: none;
-    padding-left: 0px;
-}
-
-.flex-container-smallbox ul li {
-    background-size: 20px;
-    background-position: 0% 50%;
-    background-repeat: no-repeat;
-    padding: 0.5em 0 0 2em; 
-    margin: 5px;
-}
-
-.flex-container-half {
-    width: 460px;
-    margin: 1em;
-}
-
-.flex-container-half-index {
-    width: 660px;
-    margin: 1em;
-    padding-top: 100px;
-    padding-left: 1em;
-}
-
-.flex-container-half-linklist {
-    width: 460px;
-    border: solid 2px #28497c;
-    border-radius: 15px;
-    margin: 1em;
-    padding: 20px;
-}
-
-.flex-container-half-linklist ul {
-    padding: 0 40px 0 10px;
-}
-
-.koop-container-full {
-    margin: 1em;
-}
-
-.flex-container-200-200 {
-    width: 200px;
-    height: 200px;
-    margin: 3px
-}
-
-.flex-container-200-100 {
-    width: 200px;
-    height: 97px;
-    margin-bottom: 3px;
-    overflow: hidden;
-}
-
-.flex-container-200-100:last-child {
-    width: 200px;
-    height: 100px;
-    margin-bottom: 0;
-}
-
-.flex-container-100-100 {
-    width: 98px;
-    height: 100px;
-    margin-right: 2px;
-}
-.flex-container-100-100:last-child{
-    width: 100px;
-    margin-right: 0;
-}
-
-.flex-container-100-50 {
-    width: 98px;
-    height: 45px;
-    margin-bottom: 2px
-}
-
-.flex-container-100-50:last-child {
-    height: 50px;
-    margin-bottom: 0;
-}
-
-.fill-blue {
-    background-color: #28497c;
-}
-
+/* Image of main section in the upper left corner */
 .chapterImg {
     max-width: 75%;
     margin-top: 40px;
