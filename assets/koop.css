@@ -20,7 +20,7 @@ and open the template in the editor.
 
 /* Cartoon images on index page */
 a.hover_image img {
-    position:absolute;
+    position: absolute;
     -webkit-transition: opacity 0.3s ease-in-out;
     -moz-transition: opacity 0.3s ease-in-out;
     -o-transition: opacity 0.3s ease-in-out;
@@ -28,7 +28,7 @@ a.hover_image img {
 }
 
 a.hover_image img.top:hover {
-    opacity:0;
+    opacity: 0;
 }
 
 #page_title_container{

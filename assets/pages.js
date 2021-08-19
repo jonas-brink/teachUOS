@@ -50,4 +50,17 @@ $(document).ready(function () {
 		text = text.replace("DURCH'S STUDIUM", "<b>DURCH'S</b> STUDIUM");
 		$(this).html(text);
 	});
+
+	// Hover effect on home button
+	$('.koop-back').mouseenter(
+		function () {
+			$('.koop-back .top').css('opacity', '0');
+		}
+	);
+
+	$('.koop-back').mouseleave(
+		function () {
+			$('.koop-back .top').css('opacity', '100');
+		}
+	);
 });

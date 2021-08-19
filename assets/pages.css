@@ -198,3 +198,33 @@ section.block {
     margin-top: 40px;
     margin-bottom: 15px;
 }
+
+/* Styling of home button */
+.koop-back {
+    background-color: #28497c;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin-left: 35%;
+    margin-right: 35%;
+    padding-top: 5px;
+    -webkit-transition: background-color 0.5s ease !important;
+    -moz-transition: background-color 0.5s ease !important;
+    -o-transition: background-color 0.5s ease !important;
+    transition: background-color 0.5s ease !important;
+}
+
+.koop-back img.top {
+    position: absolute;
+}
+
+.koop-back:hover {
+    background-color: white;
+}
+
+/* Transition effect on  */
+.koop-back img {
+    -webkit-transition: opacity 0.5s ease;
+    -moz-transition: opacity 0.5s ease;
+    -o-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+}

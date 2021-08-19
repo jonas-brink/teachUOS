@@ -20,9 +20,9 @@
         <!-- COURSEWARE SIDEBAR -->
 
         <!-- Button with icon to return to the index pages -->
-        <a class='koop-back hover_image'  href='..\'>
-            <img width="30" style="margin-left: -20px;"  class="bottom" src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/home.svg" />
-            <img width="30" style="margin-left: -20px;" class="top" src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/home_hover.svg" /> <br>
+        <a class='koop-back'  href='..\'>
+            <img width="30" class="top" src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/home.svg" />
+            <img width="30" class="bottom" src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/home_hover.svg" />
         </a>    
         
         <!-- teachUOS logo at the bottom of the sidebar -->
