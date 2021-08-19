@@ -23,6 +23,10 @@ a.hover_image img.top:hover {
 
 /* ------------------------------------------- */
 
+#page_title_container{
+    display: none;
+}
+
 .light {
     font-weight: 300;
 }
