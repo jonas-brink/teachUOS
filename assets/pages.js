@@ -26,7 +26,13 @@ $(document).ready(function () {
 	// add header to side menu
 	$(".chapter.selected").insertAfter("#chapterImg_container");
 
-	$('ol.active-subchapter').wrap('<div style="width: 70%; float: right;"></div>');
+	// Wrap div around subchapter navigation of courseware
+	$('ol.active-subchapter').wrap('<div id="subchapter_wrapper" style="width: 70%; float: right;"></div>');
+
+	// Hide subchapter navigation if only one option is available
+	if ($('ol.active-subchapter li.section').length <= 1) {
+		$('#subchapter_wrapper').hide();
+	}
 
 	$("#courseware").show();
 	$(".koop-sub-content").show();
