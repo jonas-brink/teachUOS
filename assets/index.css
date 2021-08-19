@@ -1,0 +1,221 @@
+#layout-sidebar {
+    display: none;
+}
+
+#page_title_container{
+    padding-top: 0px;
+}
+
+#layout_container{
+    padding:0px !important;
+}
+
+#layout_content{
+    min-width: 1300px !important;
+}
+
+.teachuos_logo {
+    font-size: 10px;
+    width: 1190px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#teachuos-logo2{
+    width: 260px !important;
+    margin-top: 94px;
+    margin-left: 170px;
+    margin-bottom: 18px;
+}
+
+.flex-container-1000-200-l100 {
+    height: 120px;
+    font-size: 13px;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.index_comic{
+    float:left;
+    color: #ffffff;
+    width: 300px;
+    height: 100px;
+}
+
+.index_comic_txt{
+    position: absolute;
+    margin-top: 128px !important;
+    color: #97ACE0;
+    font-size: 13px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+
+.index_comic_txt:hover{
+    background-color: #28497c;
+}
+
+.index_comic_txt b{
+    color: #28497C;
+    
+}
+
+.index_comic1 p{
+    margin-left: 127px;
+    width: max-content;
+}
+
+.index_comic2 p{
+    margin-left: 148px;
+    width: max-content;
+}
+
+.index_comic3 p{
+    margin-left: 110px;
+    width: max-content;
+}
+
+.index_comic4 p{
+    margin-left: 97px;
+    width: max-content;
+}
+
+.index_comic1 img{
+    width:210px;
+    margin-top: 20px;
+    margin-left: 87px;
+    margin-right: auto;
+    padding-bottom: 10px;
+}
+
+.light {
+    font-weight: 300;
+}
+
+.regular {
+    font-weight: 400;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.black {
+    font-weight: 900;
+}
+
+.fontsize13 {
+    font-size: 13px;
+}
+
+.index_comic2 img{
+    width:212px;
+    margin-top: -11px;
+    margin-left: 105px;
+    margin-right: auto;
+    color: #ffffff;
+    padding-bottom: 10px;
+}
+
+.index_comic3 img{
+    width:206px;
+    margin-top: 24.5px;
+    margin-left: 54px;
+    margin-right: auto;
+    color: #ffffff;
+    padding-bottom: 10px;
+}
+
+.index_comic4 img{
+    width:214px;
+    margin-top: 7px;
+    margin-left: 35px;
+    margin-right: auto;    
+    color: #ffffff;
+    padding-bottom: 10px;
+}
+
+a.koop-index-navigation{
+    color: #ffffff;
+}
+
+.koop-content-centered2 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    min-width: 1300px;
+}
+
+.koop-content2{
+    width: 100%;
+    font-size: 13px;
+    background-color: #28497c;
+    min-width: 1300px;
+}
+
+.koop-infobox{
+    font-size: 13px;
+    width: 1090px;
+    margin-top: 95px;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    padding-bottom: 80px;
+}
+
+.koop-infobox h3{
+    font-size: 16px;
+    color: #4F6EB9;
+    font-weight: normal;
+    padding-top: 15px;
+    margin-left: 40px;
+}
+
+.koop-infobox p{
+    margin-left: 40px;
+}
+
+.koop-footer-line{
+    border-left: 0.75px solid #28497c;
+    height: 180px;
+    float: left;
+    width: 40px;
+    margin-left: 77px;
+}
+
+#layout_content{
+    padding:0px;
+}
+
+/* CSS background transitions */
+#study_txt {
+    transition: background-color 0.5s ease;
+}
+#subjects_txt {
+    transition: background-color 0.5s ease;
+}
+#media_txt {
+    transition: background-color 0.5s ease;
+}
+#practice_txt {
+    transition: background-color 0.5s ease;
+}
+
+#study_b {
+    transition: color 0.5s ease;
+}
+#subjects_b {
+    transition: color 0.5s ease;
+}
+#media_b {
+    transition: color 0.5s ease;
+}
+#practice_b {
+    transition: color 0.5s ease;
+}

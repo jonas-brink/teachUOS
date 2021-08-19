@@ -54,21 +54,3 @@
     </div>
 
 </div>
-
-<script>
-    $( document ).ready(function() {
-        $(".subchapter").each(function( index ) {
-            if(index>0){
-                $("#kachel_"+index).attr("href", $( this ).find("a").attr("href"));
-                $("#edit_link_"+index).text($( this ).find("a").text());
-            }
-        });
-
-        // hide all boxes without link
-        $("a.sub_kacheln.koop-index-navigation.margin_center").each(function( index ) {
-            if($( this ).attr("href") == "#"){
-                $( this ).hide();
-            }
-        });
-    }); 
-</script>

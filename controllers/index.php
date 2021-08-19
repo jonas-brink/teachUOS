@@ -14,7 +14,8 @@ class IndexController extends StudipController
         parent::before_filter($action, $args);
         // Set title of browser tab
         PageLayout::setTitle(_("teachUOS"));
-        // Add koop stylesheet for index pages
+        // Add stylesheets for index page
+        PageLayout::addStylesheet($this->plugin->getPluginURL() . '/assets/index.css');
         PageLayout::addStylesheet($this->plugin->getPluginURL() . '/assets/koop.css');
         // Activate icon in main navigation + subnavigation
         Navigation::activateItem('koop/teachUOS');
