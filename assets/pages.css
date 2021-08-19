@@ -119,6 +119,7 @@ a.navigate{
 /* Subchapter navigation */
 ol.active-subchapter {
     padding: 0 !important;
+    float: right;
 }
     
 ol.active-subchapter li  > a {
