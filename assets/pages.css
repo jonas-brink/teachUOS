@@ -127,6 +127,7 @@ ol.active-subchapter li  > a {
     height: auto !important;
     background-image: none !important;
     text-transform: uppercase;
+    margin-bottom: 8px;
 }
 
 /* Sidebar navigation */
