@@ -63,4 +63,23 @@ $(document).ready(function () {
 			$('.koop-back .top').css('opacity', '100');
 		}
 	);
+
+	// Hover effect on favourite star
+	$('.favourite-star').mouseenter(
+		function () {
+			$('.favourite-star .bottom').css('opacity', '100');
+			$('.favourite-star .top').css('opacity', '0');
+			if ($('.favourite-star img').hasClass('top') || $('.favourite-star img').hasClass('bottom')) {
+				$('.favourite-star').css('margin-top', '22px');
+			}
+		}
+	);
+
+	$('.favourite-star').mouseleave(
+		function () {
+			$('.favourite-star .bottom').css('opacity', '0');
+			$('.favourite-star .top').css('opacity', '100');
+			$('.favourite-star').css('margin-top', '32px');
+		}
+	);
 });

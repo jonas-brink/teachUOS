@@ -42,12 +42,13 @@
         <div id='header-read-mode'>
             <!-- Show star which indicates whether the page has been marked as a favourite or not -->
             <? if(!$isFavourite) : ?>
-                <a href="<?= PluginEngine::getURL('koop/pages/addToFavourites', ['selected' => Request::int('selected')]) ?>">
-                    <img id='favourite-star' src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/non_favourite.svg" />
+                <a class="favourite-star" href="<?= PluginEngine::getURL('koop/pages/addToFavourites', ['selected' => Request::int('selected')]) ?>">
+                    <img class="top" src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/non_favourite.svg" />
+                    <img class="bottom" src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/favourite.svg" />
                 </a>
             <? else : ?>
-                <a href="<?= PluginEngine::getURL('koop/pages/removeFromFavourites', ['selected' => Request::int('selected')]) ?>">
-                  <img id='favourite-star' src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/favourite.svg" />
+                <a class="favourite-star marked" href="<?= PluginEngine::getURL('koop/pages/removeFromFavourites', ['selected' => Request::int('selected')]) ?>">
+                    <img src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/favourite.svg" />
                 </a>
             <? endif ?>
         </div>
