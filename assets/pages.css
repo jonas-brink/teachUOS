@@ -120,6 +120,8 @@ a.navigate{
 ol.active-subchapter {
     padding: 0 !important;
     float: right;
+    height: auto !important;
+    background-color: #f6f7f7 !important;
 }
     
 ol.active-subchapter li  > a {
@@ -129,6 +131,7 @@ ol.active-subchapter li  > a {
     background-image: none !important;
     text-transform: uppercase;
     margin-bottom: 8px;
+    background-color: #f6f7f7 !important;
 }
 
 /* Sidebar navigation */
@@ -144,8 +147,13 @@ ol.subchapters{
 /* COURSEWARE CONTENT */
 #courseware{
 	max-width: 100% !important;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-left: 5% !important;
+    padding-right: 5%;
+    padding-top: 25px;
+    background-color: #f6f7f7;
+    border-radius: 25px 0px 25px 25px;
 }
 
 .koop-text-behalter{
@@ -161,13 +169,40 @@ ol.subchapters{
     display: inline-block;
 }
 
-#favourite-star {
-    max-width: 60%;
-    max-height: 60%;
-    margin-top: 2%;
-    margin-right: 3.5%;
+.favourite-star {
+    margin-top: 32px;
+    margin-right: 5%;
     cursor: pointer;
     float: right;
+    padding-top: 10px;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-bottom: 20px;
+    background-color: #f6f7f7;
+    border-radius: 15px 15px 0px 0px;
+    -webkit-transition: margin 0.3s ease !important;
+    -moz-transition: margin 0.3s ease !important;
+    -o-transition: margin 0.3s ease !important;
+    transition: margin 0.3s ease !important;
+}
+
+.favourite-star .top {
+    position: absolute;
+}
+
+.favourite-star .bottom {
+    opacity: 0;
+}
+
+.favourite-star img {
+    -webkit-transition: opacity 0.3s ease !important;
+    -moz-transition: opacity 0.3s ease !important;
+    -o-transition: opacity 0.3s ease !important;
+    transition: opacity 0.3s ease !important;
+}
+
+.favourite-star.marked {
+    margin-top: 22px !important;
 }
 
 section.block {
