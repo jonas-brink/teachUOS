@@ -2,9 +2,9 @@
 <div class="koop-content-centered2 ">
     <div class="koop-content2">
         <!-- myTeachUOS button (in style of forum) -->
-        <a class="myteachuos" href="<?= PluginEngine::getURL('koop/pages/favourites') ?>" >
-            <p id="myteachuos_txt">My teachUOS+</p>
-            <img id="myteachuos_img" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/myteachuos.svg' ?>" />
+        <a id="myteachuos" href="<?= PluginEngine::getURL('koop/pages/favourites') ?>" >
+            <p class="myteachuos_txt">My teachUOS+</p>
+            <img class="myteachuos_img" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/myteachuos.svg' ?>" />
         </a>
         
         <!-- teachUOS logo -->

@@ -154,7 +154,7 @@
 }
 
 /* My teachUOS button */
-.myteachuos {
+#myteachuos {
     border: 2px solid white;
     border-radius: 10px;
     padding-top: 7.5px;
@@ -170,21 +170,8 @@
     transition: background-color 0.5s !important;
 }
 
-.myteachuos:hover {
+#myteachuos:hover {
     background-color: #28497c;
     color: white;
 }
 
-#myteachuos_txt {
-    margin: 0px;
-    width: 65%;
-    float: left;
-    margin-top: 3px;
-    margin-left: 28px;
-    transition: color 0.5s;
-}
-
-#myteachuos_img {
-    float: left;
-    margin-bottom: 2px;
-}
