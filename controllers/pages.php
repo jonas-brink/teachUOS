@@ -192,6 +192,9 @@ class PagesController extends StudipController
         $factory = new Flexi_TemplateFactory($path_to_the_templates);
         $koop_page_template = $factory->open('koop_page');
 
+        //set $plugin variable for koop_page template
+        $koop_page_template->set_attribute('plugin', $this->plugin);
+
         // set URI and path variables for koop_page template
         $koop_page_template->set_attribute('ABSOLUTE_URI_STUDIP', $GLOBALS['ABSOLUTE_URI_STUDIP']);
         $koop_page_template->set_attribute('getPluginPath', $this->plugin->getPluginPath());

@@ -263,3 +263,22 @@ section.block {
     -o-transition: opacity 0.5s ease;
     transition: opacity 0.5s ease;
 }
+
+/* My teachUOS+ button on second layer */
+#myteachuos {
+    background-color: #f6f7f7;
+    width: 15%;
+    display: block;
+    border-radius: 10px;
+    float: left;
+    margin-left: 5%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 25px;
+    transition: background-color 0.5s !important;
+}
+
+#myteachuos:hover {
+    background-color: #28497c;
+    color: white;
+}
