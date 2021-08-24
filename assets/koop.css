@@ -8,6 +8,10 @@ and open the template in the editor.
     Author     : anne
 */
 
+#layout-sidebar {
+    display: none;
+}
+
 #layout_content{
 	padding: 0px;
 	/*to remove second scrollbar*/

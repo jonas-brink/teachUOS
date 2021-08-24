@@ -20,6 +20,11 @@ class PagesController extends StudipController
 
     public function favourites_action()
     {
+        // Add stylesheet for my teachUOS+ page
+        PageLayout::addStylesheet($this->plugin->getPluginURL() . '/assets/favourites.css');
+        // Add js file for my teachUOS+ page
+        PageLayout::addScript($this->plugin->getPluginURL() . '/assets/favourites.js');
+
         $db = DBManager::get();
 
         //get user_id

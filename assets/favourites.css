@@ -1,0 +1,104 @@
+/* My teachUOS+ page */
+#myteachuos_wrapper {
+    height: 85vh;
+    background-color: #28497c;
+    width: 100%;
+}
+
+#myteachuos_container {
+    height: 100%;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 5%;
+}
+
+#myteachuos_logo {
+    height: 65px;
+    float: left;
+}
+
+#myteachuos_title {
+    float: left;
+    height: 65px;
+    font-size: 35pt;
+    margin-left: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+#link_wrapper {
+    width: 100%;
+    clear: left;
+    padding-top: 25px;
+    height: 50%;
+    overflow: auto;
+}
+
+.favourites_link {
+    color: white !important;
+    width: 98%;
+    display: block;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    transition: background-color 0.5s !important;
+}
+
+.favourites_link:hover {
+    background-color: white;
+    color: #28497c !important;
+}
+
+.link_img {
+    float: left;
+    height: 32px;
+    margin: 9px;
+    transition: opacity 0.5s;
+}
+
+.link_txt {
+    margin: 0px;
+    margin-top: 9px;
+    margin-left: 55px;
+    font-size: 18pt;
+    transition: color 0.5s;
+}
+
+.favourites_link .top {
+    display: none;
+}
+
+/* Styling of home button */
+.koop-back {
+    background-color: #28497c;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding-top: 5px;
+    display: block;
+    float: left;
+    width: 10%;
+    text-align: center;
+    margin-top: 40px;
+    -webkit-transition: background-color 0.5s ease !important;
+    -moz-transition: background-color 0.5s ease !important;
+    -o-transition: background-color 0.5s ease !important;
+    transition: background-color 0.5s ease !important;
+}
+
+.koop-back img.top {
+    position: absolute;
+}
+
+.koop-back:hover {
+    background-color: white;
+}
+
+/* Transition effect on  */
+.koop-back img {
+    -webkit-transition: opacity 0.5s ease;
+    -moz-transition: opacity 0.5s ease;
+    -o-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+}
