@@ -14,7 +14,6 @@ class AddTables extends Migration
             `user_id` VARCHAR(32) NOT NULL,
             `course_id` VARCHAR(32) NOT NULL,
             `block_id` INT(11) NOT NULL,
-            `position` INT(11) NOT NULL,
             PRIMARY KEY (`user_id`, `course_id`, `block_id`) 
             )
         ");

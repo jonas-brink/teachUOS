@@ -31,8 +31,14 @@ class PagesController extends StudipController
         $user_id = $GLOBALS['user']->id;
         //get course_id
         $this->course_id = $this->plugin->getKoopCourse();
-        //get favourites
-        $favourites = $db->fetchAll("SELECT * FROM `koop_favourites` WHERE user_id=? AND course_id=?", [$user_id, $this->course_id]);
+        // Get favourites and order them alphabetically by title
+        $favourites = $db->fetchAll("SELECT * 
+                                    FROM koop_favourites kf 
+                                    INNER JOIN mooc_blocks mb 
+                                    ON kf.block_id = mb.id
+                                    WHERE kf.user_id=? AND kf.course_id=? 
+                                    ORDER BY mb.title", 
+                                    [$user_id, $this->course_id]);
 
         $this->favourites_titles = array();
         for ($i = 0; $i < count($favourites); $i++) {
@@ -50,12 +56,6 @@ class PagesController extends StudipController
         $user_id = $GLOBALS['user']->id;
         //get course_id
         $course_id = Request::option('cid');
-        //get position of new element
-        $numFavourites = $db->fetchOne("SELECT COUNT(*) AS listLength FROM `koop_favourites` WHERE user_id=? AND course_id=?", [$user_id, $course_id]);
-        $position = intval($numFavourites['listLength']);
-        //get block_id
-        //$block_id = Request::int('selected');
-
         //check if type of selected block is 'Section'
         $block = \Mooc\DB\Block::find($block_id);
         while ($block->type !== 'Section')
@@ -82,9 +82,6 @@ class PagesController extends StudipController
         $user_id = $GLOBALS['user']->id;
         //get course_id
         $course_id = Request::option('cid');
-        //get position of new element
-        $numFavourites = $db->fetchOne("SELECT COUNT(*) AS listLength FROM `koop_favourites` WHERE user_id=? AND course_id=?", [$user_id, $course_id]);
-        $position = intval($numFavourites['listLength']);
         //get block_id
         $block_id = Request::int('selected');
 
@@ -94,8 +91,6 @@ class PagesController extends StudipController
             //delete favourite from db
             $db->execute('DELETE FROM `koop_favourites` WHERE user_id=? AND course_id=? AND block_id=?', [$user_id, $course_id, $block_id]);
         }
-
-        //TODO: Update positions after removing
 
         //TODO: redirect or open favourites?
         $this->redirect(PluginEngine::getURL($this->plugin, ['cid' => $course_id, 'selected' => $block_id], 'pages/cw'));
@@ -109,9 +104,6 @@ class PagesController extends StudipController
         $user_id = $GLOBALS['user']->id;
         //get course_id
         $course_id = Request::option('cid');
-        //get position of new element
-        $numFavourites = $db->fetchOne("SELECT COUNT(*) AS listLength FROM `koop_favourites` WHERE user_id=? AND course_id=?", [$user_id, $course_id]);
-        $position = intval($numFavourites['listLength']);
         //get block_id
         $block_id = Request::int('selected');
 
@@ -127,7 +119,7 @@ class PagesController extends StudipController
             }
 
             //add favourite to db
-            $db->execute('INSERT INTO `koop_favourites` (user_id, course_id, block_id, position) VALUES (?, ?, ?, ?)', [$user_id, $course_id, $block_id, $position]);
+            $db->execute('INSERT INTO `koop_favourites` (user_id, course_id, block_id) VALUES (?, ?, ?)', [$user_id, $course_id, $block_id]);
         }
 
         //TODO: redirect or open favourites?
