@@ -30,6 +30,8 @@
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 10px;
+    text-align: center;
+    width: max-content;
 }
 
 .index_comic_txt:hover{
@@ -40,31 +42,11 @@
     color: #28497C;
 }
 
-.index_comic1 p{
-    margin-left: 127px;
-    width: max-content;
-}
-
-.index_comic2 p{
-    margin-left: 148px;
-    width: max-content;
-}
-
-.index_comic3 p{
-    margin-left: 110px;
-    width: max-content;
-}
-
-.index_comic4 p{
-    margin-left: 97px;
-    width: max-content;
-}
-
 .index_comic2 img{
     width:212px;
     margin-top: -11px;
-    margin-left: 105px;
-    margin-right: auto;
+    margin-left: 52.5px;
+    margin-right: 52.5px;
     color: #ffffff;
     padding-bottom: 10px;
 }
@@ -72,22 +54,22 @@
 .index_comic1 img{
     width:210px;
     margin-top: 20px;
-    margin-left: 87px;
-    margin-right: auto;
+    margin-left: 43.5px;
+    margin-right: 43.5px;
 }
 
 .index_comic3 img{
     width:206px;
     margin-top: 24.5px;
-    margin-left: 54px;
-    margin-right: auto;
+    margin-left: 27px;
+    margin-right: 27px;
 }
 
 .index_comic4 img{
     width:214px;
     margin-top: 7px;
-    margin-left: 35px;
-    margin-right: auto;    
+    margin-left: 17.5px;
+    margin-right: 17.5px;
 }
 
 .koop-content-centered2 {
@@ -103,7 +85,7 @@
 .koop-infobox{
     font-size: 13px;
     width: 60%;
-    margin-top: 6%;
+    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -124,15 +106,19 @@
 
 /* Main section text transitions */
 #study_txt {
+    margin-left: 89px;
     transition: background-color 0.5s ease;
 }
 #subjects_txt {
+    margin-left: 73px;
     transition: background-color 0.5s ease;
 }
 #media_txt {
+    margin-left: 70px;
     transition: background-color 0.5s ease;
 }
 #practice_txt {
+    margin-left: 66px;
     transition: background-color 0.5s ease;
 }
 
