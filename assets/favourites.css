@@ -6,7 +6,6 @@
 }
 
 #myteachuos_container {
-    height: 100%;
     width: 60%;
     margin-left: 20%;
     margin-right: 20%;
@@ -32,7 +31,7 @@
     width: 100%;
     clear: left;
     padding-top: 25px;
-    height: 50%;
+    height: 40vh;
     overflow: auto;
 }
 
