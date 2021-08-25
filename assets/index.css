@@ -107,32 +107,32 @@
 /* Main section text transitions */
 #study_txt {
     margin-left: 89px;
-    transition: background-color 0.5s ease;
+    transition: background-color 0.5s;
 }
 #subjects_txt {
     margin-left: 73px;
-    transition: background-color 0.5s ease;
+    transition: background-color 0.5s;
 }
 #media_txt {
     margin-left: 70px;
-    transition: background-color 0.5s ease;
+    transition: background-color 0.5s;
 }
 #practice_txt {
     margin-left: 66px;
-    transition: background-color 0.5s ease;
+    transition: background-color 0.5s;
 }
 
 #study_b {
-    transition: color 0.5s ease;
+    transition: color 0.5s;
 }
 #subjects_b {
-    transition: color 0.5s ease;
+    transition: color 0.5s;
 }
 #media_b {
-    transition: color 0.5s ease;
+    transition: color 0.5s;
 }
 #practice_b {
-    transition: color 0.5s ease;
+    transition: color 0.5s;
 }
 
 /* My teachUOS button */

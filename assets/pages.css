@@ -185,10 +185,10 @@ ol.subchapters{
     padding-bottom: 20px;
     background-color: #f6f7f7;
     border-radius: 15px 15px 0px 0px;
-    -webkit-transition: margin 0.3s ease !important;
-    -moz-transition: margin 0.3s ease !important;
-    -o-transition: margin 0.3s ease !important;
-    transition: margin 0.3s ease !important;
+    /*-webkit-transition: margin 0.3s !important;
+    -moz-transition: margin 0.3s !important;
+    -o-transition: margin 0.3s !important;*/
+    transition: margin 0.3s !important;
 }
 
 .favourite-star .top {
@@ -200,10 +200,10 @@ ol.subchapters{
 }
 
 .favourite-star img {
-    -webkit-transition: opacity 0.3s ease !important;
-    -moz-transition: opacity 0.3s ease !important;
-    -o-transition: opacity 0.3s ease !important;
-    transition: opacity 0.3s ease !important;
+    /*-webkit-transition: opacity 0.3s !important;
+    -moz-transition: opacity 0.3s !important;
+    -o-transition: opacity 0.3s !important;*/
+    transition: opacity 0.3s !important;
 }
 
 .favourite-star.marked {
@@ -247,10 +247,10 @@ section.block {
     margin-left: 35%;
     margin-right: 35%;
     padding-top: 5px;
-    -webkit-transition: background-color 0.5s ease !important;
-    -moz-transition: background-color 0.5s ease !important;
-    -o-transition: background-color 0.5s ease !important;
-    transition: background-color 0.5s ease !important;
+    /*-webkit-transition: background-color 0.5s !important;
+    -moz-transition: background-color 0.5s !important;
+    -o-transition: background-color 0.5s !important;*/
+    transition: background-color 0.5s !important;
 }
 
 .koop-back img.top {
@@ -263,10 +263,10 @@ section.block {
 
 /* Transition effect on  */
 .koop-back img {
-    -webkit-transition: opacity 0.5s ease;
-    -moz-transition: opacity 0.5s ease;
-    -o-transition: opacity 0.5s ease;
-    transition: opacity 0.5s ease;
+    /*-webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;*/
+    transition: opacity 0.5s;
 }
 
 /* My teachUOS+ button on second layer */

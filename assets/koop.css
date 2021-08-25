@@ -25,10 +25,10 @@ and open the template in the editor.
 /* Cartoon images on index page */
 a.hover_image img {
     position: absolute;
-    -webkit-transition: opacity 0.3s ease-in-out;
-    -moz-transition: opacity 0.3s ease-in-out;
-    -o-transition: opacity 0.3s ease-in-out;
-    transition: opacity 0.3s ease-in-out;
+    /*-webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;*/
+    transition: opacity 0.3s;
 }
 
 a.hover_image img.top:hover {
