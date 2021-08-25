@@ -8,7 +8,7 @@
                 <a class="favourites_link" href="<?= PluginEngine::getURL('koop/pages/cw', ['cid' => $course_id, 'selected' => $favourites_titles[$i][0]]) ?>" >
                     <img class="top link_img" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $plugin->getPluginPath() . '/assets/images/favourite.svg' ?>" />
                     <img class="bottom link_img" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $plugin->getPluginPath() . '/assets/images/favourite_white.svg' ?>" />
-                    <p class="link_txt"><?= $favourites_titles[$i][1] ?></p>
+                    <p class="link_txt"><?= $favourites_titles[$i][1] ?> <?= $favourites_titles[$i][2] ?></p>
                 </a>
             <? endfor ?>
         </div>

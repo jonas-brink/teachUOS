@@ -44,7 +44,15 @@ class PagesController extends StudipController
         for ($i = 0; $i < count($favourites); $i++) {
             $block_id = intval($favourites[$i]['block_id']);
             $block = \Mooc\DB\Block::find($block_id);
-            array_push($this->favourites_titles, [$block_id, $block->title]);
+            $parent_block_id = intval($favourites[$i]['parent_id']);
+            $parent_block = \Mooc\DB\Block::find($parent_block_id);
+            $parent_block_title = "(" . $parent_block->title . ")";
+            // Check if title of block and parents block title are the same
+            // Hide parents block title if the test was positive
+            if (strcmp($parent_block->title, $block->title) == 0) {
+                $parent_block_title = "";
+            }
+            array_push($this->favourites_titles, [$block_id, $block->title, $parent_block_title]);
         }
     }
 
