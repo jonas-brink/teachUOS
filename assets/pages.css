@@ -78,9 +78,10 @@
 
 .koop-kacheln-behalter{
     position: relative;
-    width:17%;
+    width: 17%;
+    max-width: 400px;
     height: 100%;
-    float:left;
+    float: left;
     background-color: #28497c;
     text-align: center;
     font-size: Large;
@@ -122,6 +123,10 @@ ol.active-subchapter {
     float: right;
     height: auto !important;
     background-color: #f6f7f7 !important;
+}
+
+ol.active-subchapter.stuck {
+    display: none;
 }
     
 ol.active-subchapter li  > a {
@@ -268,6 +273,7 @@ section.block {
 #myteachuos {
     background-color: #f6f7f7;
     width: 15%;
+    max-width: 250px;
     display: block;
     border-radius: 10px;
     float: left;
