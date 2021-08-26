@@ -32,6 +32,7 @@
     margin-right: 35px;
     padding-top: 3px;
     padding-bottom: 3px;
+    transition: color 0.5s, background-color 0.5s;
 }
 
 .subchapter div a:hover {
@@ -100,6 +101,7 @@ ol.active-subchapter a.navigate {
     padding-bottom: 3px !important;
     padding-left: 35px !important;
     padding-right: 35px !important;
+    transition: color 0.5s, background-color 0.5s;
 }
 
 ol.active-subchapter a.navigate:hover {
