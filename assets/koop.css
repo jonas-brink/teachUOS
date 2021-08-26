@@ -31,10 +31,6 @@ a.hover_image img {
     transition: opacity 0.3s;
 }
 
-a.hover_image img.top:hover {
-    opacity: 0;
-}
-
 #page_title_container{
     display: none;
 }
