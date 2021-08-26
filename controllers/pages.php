@@ -33,11 +33,9 @@ class PagesController extends StudipController
         $this->course_id = $this->plugin->getKoopCourse();
         // Get favourites and order them alphabetically by title
         $favourites = $db->fetchAll("SELECT * 
-                                    FROM koop_favourites kf 
-                                    INNER JOIN mooc_blocks mb 
-                                    ON kf.block_id = mb.id
-                                    WHERE kf.user_id=? AND kf.course_id=? 
-                                    ORDER BY mb.title", 
+                                    FROM koop_favourites  
+                                    WHERE user_id=? AND course_id=? 
+                                    ORDER BY title", 
                                     [$user_id, $this->course_id]);
 
         $this->favourites_titles = array();
@@ -123,11 +121,12 @@ class PagesController extends StudipController
             while ($block->type !== 'Section')
             {
                 $block = \Mooc\DB\Block::findOneBySQL('parent_id=? AND position=?', [$block_id, 0]);
+                //TODO: is this neccessary???
                 $block_id = $block->id;
             }
 
             //add favourite to db
-            $db->execute('INSERT INTO `koop_favourites` (user_id, course_id, block_id) VALUES (?, ?, ?)', [$user_id, $course_id, $block_id]);
+            $db->execute('INSERT INTO `koop_favourites` (user_id, course_id, block_id, parent_id, title) VALUES (?, ?, ?, ?, ?)', [$user_id, $course_id, $block_id, $block->parent_id, $block->title]);
         }
 
         //TODO: redirect or open favourites?
