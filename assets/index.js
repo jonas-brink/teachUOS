@@ -3,6 +3,7 @@ $(document).ready(function () {
         function () {
             $('#study_txt').css('background-color', '#28497c');
             $('#study_b').css('color', 'white');
+            $('a.hover_image img.top.study_link').css('opacity', 0);
         }
     );
 
@@ -10,6 +11,7 @@ $(document).ready(function () {
         function () {
             $('#study_txt').css('background-color', 'white');
             $('#study_b').css('color', '#28497C');
+            $('a.hover_image img.top.study_link').css('opacity', 100);
         }
     );
 
@@ -17,6 +19,7 @@ $(document).ready(function () {
         function () {
             $('#subjects_txt').css('background-color', '#28497c');
             $('#subjects_b').css('color', 'white');
+            $('a.hover_image img.top.subjects_link').css('opacity', 0);
         }
     );
 
@@ -24,6 +27,7 @@ $(document).ready(function () {
         function () {
             $('#subjects_txt').css('background-color', 'white');
             $('#subjects_b').css('color', '#28497C');
+            $('a.hover_image img.top.subjects_link').css('opacity', 100);
         }
     );
 
@@ -31,6 +35,7 @@ $(document).ready(function () {
         function () {
             $('#media_txt').css('background-color', '#28497c');
             $('#media_b').css('color', 'white');
+            $('a.hover_image img.top.media_link').css('opacity', 0);
         }
     );
 
@@ -38,6 +43,7 @@ $(document).ready(function () {
         function () {
             $('#media_txt').css('background-color', 'white');
             $('#media_b').css('color', '#28497C');
+            $('a.hover_image img.top.media_link').css('opacity', 100);
         }
     );
 
@@ -45,6 +51,7 @@ $(document).ready(function () {
         function () {
             $('#practice_txt').css('background-color', '#28497c');
             $('#practice_b').css('color', 'white');
+            $('a.hover_image img.top.practice_link').css('opacity', 0);
         }
     );
 
@@ -52,6 +59,7 @@ $(document).ready(function () {
         function () {
             $('#practice_txt').css('background-color', 'white');
             $('#practice_b').css('color', '#28497C');
+            $('a.hover_image img.top.practice_link').css('opacity', 100);
         }
     );
 });
