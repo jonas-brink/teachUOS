@@ -1,4 +1,5 @@
 .teachuos_logo {
+    height: 71%;
     margin-left: 26.5%;
 }
 
@@ -9,7 +10,7 @@
 }
 
 .flex-container-1000-200-l100 {
-    height: 120px;
+    height: 29%;;
     width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -78,6 +79,7 @@
 }
 
 .koop-content2{
+    height: 50%;
     font-size: 13px;
     background-color: #28497c;
 }
