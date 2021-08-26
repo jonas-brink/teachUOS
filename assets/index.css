@@ -101,7 +101,11 @@
     height: 180px;
     float: left;
     width: 40px;
-    margin-left: 77px;
+    margin-left: 7%;
+}
+
+.koop-footer-content {
+    margin-right: 7%;
 }
 
 /* Main section text transitions */
