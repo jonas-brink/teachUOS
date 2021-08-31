@@ -1,9 +1,9 @@
 <!--
     Template for second layer
 -->
-<div class='koop-sub-content koop-content-centered' style='width:100%;  display: none;'>
+<div class='teachuos-sub-content teachuos-content-centered' style='width:100%;  display: none;'>
 
-    <div class='koop-kacheln-behalter'>
+    <div class='teachuos-kacheln-behalter'>
         <!-- Selection of image to represent active main section -->
         <div id="chapterImg_container">
             <? if ((array_search($selected_id, $id_arr) == "study") || (array_search($selected_parent_id, $id_arr) == "study") || (array_search($selected_grandparent_id, $id_arr) == "study")) : ?>
@@ -20,14 +20,14 @@
         <!-- COURSEWARE SIDEBAR -->
 
         <!-- Button with icon to return to the index pages -->
-        <a class='koop-back'  href='..\'>
+        <a class='teachuos-back'  href='..\'>
             <img width="30" class="top" src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/home.svg" />
             <img width="30" class="bottom" src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/home_hover.svg" />
         </a>    
         
         <!-- teachUOS logo at the bottom of the sidebar -->
         <div id="logo_wrapper">
-            <div class="koop-footer light">
+            <div class="teachuos-footer light">
                 <img width="90"  src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/B0_teachUOS1.svg" />
                 <br>
                 VOM ZENTRUM FÜR LEHRERBILDUNG DER
@@ -38,7 +38,7 @@
     </div>
 
     <!-- COURSEWARE CONTENT -->
-    <div class='koop-text-behalter'>
+    <div class='teachuos-text-behalter'>
         <div id='header-read-mode'>
             <!-- Button/Link to MyTeachUOS+ page -->
             <a id="myteachuos" href="<?= PluginEngine::getURL('teachUOS/pages/favourites') ?>">

@@ -17,8 +17,8 @@ $(document).ready(function () {
 		});
 	});
 
-	$("#courseware").appendTo(".koop-text-behalter");
-	$(".koop-sub-content").appendTo("#layout_content");
+	$("#courseware").appendTo(".teachuos-text-behalter");
+	$(".teachuos-sub-content").appendTo("#layout_content");
 	$("#courseware").css("padding-left", "0");
 
 	$(".navigate").attr("data-title", "");
@@ -35,7 +35,7 @@ $(document).ready(function () {
 	}
 
 	$("#courseware").show();
-	$(".koop-sub-content").show();
+	$(".teachuos-sub-content").show();
 
 	// add styles to the header in sidemenu
 	$('.chapter.selected a').each(function () {
@@ -52,15 +52,15 @@ $(document).ready(function () {
 	});
 
 	// Hover effect on home button
-	$('.koop-back').mouseenter(
+	$('.teachuos-back').mouseenter(
 		function () {
-			$('.koop-back .top').css('opacity', '0');
+			$('.teachuos-back .top').css('opacity', '0');
 		}
 	);
 
-	$('.koop-back').mouseleave(
+	$('.teachuos-back').mouseleave(
 		function () {
-			$('.koop-back .top').css('opacity', '100');
+			$('.teachuos-back .top').css('opacity', '100');
 		}
 	);
 

@@ -71,7 +71,7 @@
 }
 
 /* Styling of home button */
-.koop-back {
+.teachuos-back {
     background-color: #28497c;
     border: 2px solid white;
     border-radius: 10px;
@@ -88,16 +88,16 @@
     transition: background-color 0.5s !important;
 }
 
-.koop-back img.top {
+.teachuos-back img.top {
     position: absolute;
 }
 
-.koop-back:hover {
+.teachuos-back:hover {
     background-color: white;
 }
 
 /* Transition effect on  */
-.koop-back img {
+.teachuos-back img {
     /*-webkit-transition: opacity 0.5s;
     -moz-transition: opacity 0.5s;
     -o-transition: opacity 0.5s;*/

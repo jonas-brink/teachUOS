@@ -17,15 +17,15 @@ $(document).ready(function () {
     );
 
     // Hover effect on home button
-    $('.koop-back').mouseenter(
+    $('.teachuos-back').mouseenter(
         function () {
-            $('.koop-back .top').css('opacity', '0');
+            $('.teachuos-back .top').css('opacity', '0');
         }
     );
 
-    $('.koop-back').mouseleave(
+    $('.teachuos-back').mouseleave(
         function () {
-            $('.koop-back .top').css('opacity', '100');
+            $('.teachuos-back .top').css('opacity', '100');
         }
     );
 });

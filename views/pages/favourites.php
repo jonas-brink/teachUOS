@@ -13,7 +13,7 @@
             <? endfor ?>
         </div>
         <!-- Button with icon to return to the index pages -->
-        <a class='koop-back'  href='..\'>
+        <a class='teachuos-back'  href='..\'>
             <img width="30" class="top" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $plugin->getPluginPath() . '/assets/images/home.svg' ?>" />
             <img width="30" class="bottom" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $plugin->getPluginPath() . '/assets/images/home_hover.svg' ?>" />
         </a>

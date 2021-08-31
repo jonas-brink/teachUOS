@@ -14,7 +14,6 @@ class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin
         // Add icon to main navigation with link to /index
         $navigation = new Navigation('teachUOS');
         $navigation->setImage(Icon::create('doctoral_cap', 'navigation'));
-        //$navigation->setImage($GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->getPluginPath() . '/assets/images/koop.png');
         $navigation->setURL(PluginEngine::getURL($this, array(), 'index'));
         Navigation::addItem('/teachUOS', $navigation);
         

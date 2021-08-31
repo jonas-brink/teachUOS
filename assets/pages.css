@@ -14,12 +14,12 @@
     flex-direction: column;
 }
 
-.koop-footer{
+.teachuos-footer{
     font-size: 9px;
     color: #ffffff;
 }
 
-.koop-footer img{
+.teachuos-footer img{
 	margin-bottom: 35px;
 }
 
@@ -77,7 +77,7 @@
     margin-bottom: 0px !important;
 }
 
-.koop-kacheln-behalter{
+.teachuos-kacheln-behalter{
     position: relative;
     width: 17%;
     max-width: 400px;
@@ -136,7 +136,6 @@ ol.active-subchapter li  > a {
     width: auto !important;
     height: auto !important;
     background-image: none !important;
-    text-transform: uppercase;
     margin-bottom: 8px;
     background-color: #f6f7f7 !important;
 }
@@ -163,7 +162,7 @@ ol.subchapters{
     border-radius: 25px 0px 25px 25px;
 }
 
-.koop-text-behalter{
+.teachuos-text-behalter{
     width: 83%;
     float: left;
 }
@@ -218,17 +217,17 @@ section.block {
 }
 
 /* TODO: needed? */
-.koop-text-behalter h3 {
+.teachuos-text-behalter h3 {
     font-size: 2.2em;
     margin-bottom: 1em;
 }
 
-.koop-sub-content{
+.teachuos-sub-content{
     height: 100%;
 }
 
-.koop-content h1,
-.koop-content h2 {
+.teachuos-content h1,
+.kooteachuosp-content h2 {
     text-transform: uppercase;
     margin-bottom: 1em;
     color: #28497c;
@@ -242,7 +241,7 @@ section.block {
 }
 
 /* Styling of home button */
-.koop-back {
+.teachuos-back {
     background-color: #28497c;
     border: 2px solid white;
     border-radius: 10px;
@@ -255,16 +254,16 @@ section.block {
     transition: background-color 0.5s !important;
 }
 
-.koop-back img.top {
+.teachuos-back img.top {
     position: absolute;
 }
 
-.koop-back:hover {
+.teachuos-back:hover {
     background-color: white;
 }
 
 /* Transition effect on  */
-.koop-back img {
+.teachuos-back img {
     /*-webkit-transition: opacity 0.5s;
     -moz-transition: opacity 0.5s;
     -o-transition: opacity 0.5s;*/
