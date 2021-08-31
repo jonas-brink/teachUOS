@@ -1,8 +1,13 @@
 <?php
 
+/**
+ * [Description KoOp]
+ */
 class KoOp extends StudipPlugin implements StandardPlugin, SystemPlugin
 {
         
+    /**
+     */
     public function __construct()
     {
         parent::__construct();
@@ -18,17 +23,19 @@ class KoOp extends StudipPlugin implements StandardPlugin, SystemPlugin
         $navigation->addSubNavigation('teachUOS', $teachUOS);
     }
 
-    public function before_filter(&$action, &$args)
-    {
-        parent::before_filter($action, $args);
-    }
-
+    /**
+     * @return [type]
+     */
     public function getPluginName()
     {
     	return 'Ko.OP';
     }
 
-    // Search for course id where koop plugin is active
+    /**
+     * Search for course id where koop plugin is active
+     * 
+     * @return [type]
+     */
     public function getKoopCourse()
     {
         $db = DBManager::get();
@@ -36,7 +43,11 @@ class KoOp extends StudipPlugin implements StandardPlugin, SystemPlugin
         return $koopCourseID['range_id'];
     }
 
-    // Search for courseware ids of koop blocks
+    /**
+     * Search for courseware ids of koop blocks
+     * 
+     * @return [type]
+     */
     public function getKoopBlockIDs()
     {
         // Get course_id of koop course
@@ -57,6 +68,10 @@ class KoOp extends StudipPlugin implements StandardPlugin, SystemPlugin
     /**
      * STANDARDPLUGIN
      * Liefert ein Template, das auf der Kurzinfoseite der Veranstaltung bzw. Einrichtung angezeigt wird.
+     * 
+     * @param mixed $course_id
+     * 
+     * @return [type]
      */
     public function getInfoTemplate($course_id)
     {
@@ -67,6 +82,12 @@ class KoOp extends StudipPlugin implements StandardPlugin, SystemPlugin
      * STANDARDPLUGIN
      * Liefert ein Navigationsobjekt für das Icon des Plugins auf der Seite "Meine Veranstaltungen".
      * Wenn das Plugin dort nicht angezeigt werden soll, sollte die Methode NULL liefertn.
+     * 
+     * @param mixed $course_id
+     * @param mixed $last_visit
+     * @param null $user_id
+     * 
+     * @return [type]
      */
     public function getIconNavigation($course_id, $last_visit, $user_id = null)
     {
@@ -74,9 +95,16 @@ class KoOp extends StudipPlugin implements StandardPlugin, SystemPlugin
     }
 
     /**
-     * Returns a navigation for the tab displayed in the course.
+     * 
      * @param string $course_id of the course
      * @return \Navigation
+     */
+    /**
+     * Returns a navigation for the tab displayed in the course.
+     * 
+     * @param mixed $course_id
+     * 
+     * @return [type]
      */
     public function getTabNavigation($course_id)
     {
@@ -88,6 +116,10 @@ class KoOp extends StudipPlugin implements StandardPlugin, SystemPlugin
 
     /**
      * Make plugin only activatable inside of courses for users with root permissions
+     * 
+     * @param Range $context
+     * 
+     * @return [type]
      */
     public function isActivatableForContext(Range $context)
     {
