@@ -75,10 +75,11 @@
     background-color: #28497c;
     border: 2px solid white;
     border-radius: 10px;
-    padding-top: 5px;
+    padding-top: 7px;
+    padding-bottom: 2px;
     display: block;
     float: left;
-    width: 10%;
+    width: 8%;
     text-align: center;
     margin-top: 40px;
     /*-webkit-transition: background-color 0.5s !important;
