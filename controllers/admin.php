@@ -19,8 +19,8 @@ class AdminController extends StudipController
     public function index_action()
     {
         $this->course_id = Context::getId();
-        $this->koop_course_id = $this->plugin->getKoopCourse();
-        $this->koop_course_name = Course::find($this->koop_course_id)->name;
+        $this->teachUOS_course_id = $this->plugin->getTeachUOSCourse();
+        $this->teachUOS_course_name = Course::find($this->teachUOS_course_id)->name;
     }
 
 }

@@ -1,9 +1,9 @@
 <?php
 
 /**
- * [Description KoOp]
+ * [Description TeachUOS]
  */
-class KoOp extends StudipPlugin implements StandardPlugin, SystemPlugin
+class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin
 {
         
     /**
@@ -16,7 +16,7 @@ class KoOp extends StudipPlugin implements StandardPlugin, SystemPlugin
         $navigation->setImage(Icon::create('doctoral_cap', 'navigation'));
         //$navigation->setImage($GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->getPluginPath() . '/assets/images/koop.png');
         $navigation->setURL(PluginEngine::getURL($this, array(), 'index'));
-        Navigation::addItem('/koop', $navigation);
+        Navigation::addItem('/teachUOS', $navigation);
         
         // Add one subnavigation for consistency reasons
         $teachUOS = new Navigation('teachUOS', PluginEngine::getURL($this, array(), 'index'));
@@ -28,39 +28,39 @@ class KoOp extends StudipPlugin implements StandardPlugin, SystemPlugin
      */
     public function getPluginName()
     {
-    	return 'Ko.OP';
+    	return 'teachUOS';
     }
 
     /**
-     * Search for course id where koop plugin is active
+     * Search for course id where teachUOS plugin is active
      * 
      * @return [type]
      */
-    public function getKoopCourse()
+    public function getTeachUOSCourse()
     {
         $db = DBManager::get();
-        $koopCourseID = $db->fetchOne('SELECT `range_id` FROM `plugins_activated` WHERE `pluginid` = ? AND `state` = 1', [$this->getPluginId()]);
-        return $koopCourseID['range_id'];
+        $teachUOSCourseID = $db->fetchOne('SELECT `range_id` FROM `plugins_activated` WHERE `pluginid` = ? AND `state` = 1', [$this->getPluginId()]);
+        return $teachUOSCourseID['range_id'];
     }
 
     /**
-     * Search for courseware ids of koop blocks
+     * Search for courseware ids of teachUOS blocks
      * 
      * @return [type]
      */
-    public function getKoopBlockIDs()
+    public function getTeachUOSBlockIDs()
     {
-        // Get course_id of koop course
-        $koop_course_id = $this->getKoopCourse();
+        // Get course_id of teachUOS course
+        $teachUOS_course_id = $this->getTeachUOSCourse();
 
         // Find block_ids by title
-        $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $koop_course_id, 'DURCH\'S STUDIUM']);
+        $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $teachUOS_course_id, 'DURCH\'S STUDIUM']);
         $block_study_id = $block->id;
-        $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $koop_course_id, 'IN DIE PRAXIS']);
+        $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $teachUOS_course_id, 'IN DIE PRAXIS']);
         $block_practice_id = $block->id;
-        $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $koop_course_id, 'DIGITALE MEDIEN']);
+        $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $teachUOS_course_id, 'DIGITALE MEDIEN']);
         $block_media_id = $block->id;
-        $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $koop_course_id, 'BLICK IN DIE FÄCHER']);
+        $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $teachUOS_course_id, 'BLICK IN DIE FÄCHER']);
         $block_subjects_id = $block->id;
         return array("study" => $block_study_id, "practice" => $block_practice_id, "media" => $block_media_id, "subjects" => $block_subjects_id);
     }

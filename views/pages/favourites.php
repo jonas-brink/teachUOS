@@ -5,7 +5,7 @@
         <p id="myteachuos_title">My teachUOS+</p>
         <div id="link_wrapper">
             <? for ($i = 0; $i < count($favourites_titles); $i++) : ?>
-                <a class="favourites_link" href="<?= PluginEngine::getURL('koop/pages/cw', ['cid' => $course_id, 'selected' => $favourites_titles[$i][0]]) ?>" >
+                <a class="favourites_link" href="<?= PluginEngine::getURL('teachUOS/pages/cw', ['cid' => $course_id, 'selected' => $favourites_titles[$i][0]]) ?>" >
                     <img class="top link_img" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $plugin->getPluginPath() . '/assets/images/favourite.svg' ?>" />
                     <img class="bottom link_img" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $plugin->getPluginPath() . '/assets/images/favourite_white.svg' ?>" />
                     <p class="link_txt"><?= $favourites_titles[$i][1] ?> <?= $favourites_titles[$i][2] ?></p>

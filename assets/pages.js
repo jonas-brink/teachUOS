@@ -1,5 +1,5 @@
 /*
-	Hides courseware navigation and shows koop menus in sidebar
+	Hides courseware navigation and shows teachUOS menus in sidebar
 */
 /*
 	Created on : 11.05.2020, 11:01:38
@@ -13,7 +13,7 @@ $(document).ready(function () {
 			if (old == undefined) {
 				return null;
 			}
-			return old.replace("/plugins.php/courseware/courseware", "/plugins.php/koop/pages/cw");
+			return old.replace("/plugins.php/courseware/courseware", "/plugins.php/teachUOS/pages/cw");
 		});
 	});
 

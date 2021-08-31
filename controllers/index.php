@@ -16,9 +16,9 @@ class IndexController extends StudipController
         PageLayout::setTitle(_("teachUOS"));
         // Add stylesheets for index page
         PageLayout::addStylesheet($this->plugin->getPluginURL() . '/assets/index.css');
-        PageLayout::addStylesheet($this->plugin->getPluginURL() . '/assets/koop.css');
+        PageLayout::addStylesheet($this->plugin->getPluginURL() . '/assets/teachUOS.css');
         // Activate icon in main navigation + subnavigation
-        Navigation::activateItem('koop/teachUOS');
+        Navigation::activateItem('teachUOS/teachUOS');
     }
 
     public function index_action()
@@ -26,11 +26,11 @@ class IndexController extends StudipController
         //define js file for layout
         PageLayout::addScript($this->plugin->getPluginURL() . '/assets/index.js');
 
-        // get course_id of koop course for view
-        $this->koop_course_id = $this->plugin->getKoopCourse();
+        // get course_id of teachUOS course for view
+        $this->teachUOS_course_id = $this->plugin->getTeachUOSCourse();
         
         // find block_ids by title
-        $id_arr = $this->plugin->getKoopBlockIDs();
+        $id_arr = $this->plugin->getTeachUOSBlockIDs();
         $this->study_block_id = $id_arr["study"];
         $this->practice_block_id = $id_arr["practice"];
         $this->media_block_id = $id_arr["media"];

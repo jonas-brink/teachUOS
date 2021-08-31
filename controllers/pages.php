@@ -13,9 +13,9 @@ class PagesController extends StudipController
     {
         parent::before_filter($action, $args);
         PageLayout::setTitle(_("teachUOS"));
-        PageLayout::addStylesheet($this->plugin->getPluginURL() . '/assets/koop.css');
+        PageLayout::addStylesheet($this->plugin->getPluginURL() . '/assets/teachUOS.css');
         // Activate icon in main navigation + subnavigation
-        Navigation::activateItem('koop/teachUOS');
+        Navigation::activateItem('teachUOS/teachUOS');
     }
 
     public function favourites_action()
@@ -30,10 +30,10 @@ class PagesController extends StudipController
         //get user_id
         $user_id = $GLOBALS['user']->id;
         //get course_id
-        $this->course_id = $this->plugin->getKoopCourse();
+        $this->course_id = $this->plugin->getTeachUOSCourse();
         // Get favourites and order them alphabetically by title
         $favourites = $db->fetchAll("SELECT * 
-                                    FROM koop_favourites  
+                                    FROM teachUOS_favourites  
                                     WHERE user_id=? AND course_id=? 
                                     ORDER BY title", 
                                     [$user_id, $this->course_id]);
@@ -70,7 +70,7 @@ class PagesController extends StudipController
             $block_id = $block->id;
         }
         
-        $queryResult = $db->fetchOne("SELECT COUNT(*) AS isFavourite FROM `koop_favourites` WHERE user_id=? AND course_id=? AND block_id=?", [$user_id, $course_id, $block_id]);
+        $queryResult = $db->fetchOne("SELECT COUNT(*) AS isFavourite FROM `teachUOS_favourites` WHERE user_id=? AND course_id=? AND block_id=?", [$user_id, $course_id, $block_id]);
         $isFavourite = intval($queryResult['isFavourite']);
         
         if($isFavourite)
@@ -95,7 +95,7 @@ class PagesController extends StudipController
         if($this->isFavourite($block_id))
         {
             //delete favourite from db
-            $db->execute('DELETE FROM `koop_favourites` WHERE user_id=? AND course_id=? AND block_id=?', [$user_id, $course_id, $block_id]);
+            $db->execute('DELETE FROM `teachUOS_favourites` WHERE user_id=? AND course_id=? AND block_id=?', [$user_id, $course_id, $block_id]);
         }
 
         //TODO: redirect or open favourites?
@@ -126,7 +126,7 @@ class PagesController extends StudipController
             }
 
             //add favourite to db
-            $db->execute('INSERT INTO `koop_favourites` (user_id, course_id, block_id, parent_id, title) VALUES (?, ?, ?, ?, ?)', [$user_id, $course_id, $block_id, $block->parent_id, $block->title]);
+            $db->execute('INSERT INTO `teachUOS_favourites` (user_id, course_id, block_id, parent_id, title) VALUES (?, ?, ?, ?, ?)', [$user_id, $course_id, $block_id, $block->parent_id, $block->title]);
         }
 
         //TODO: redirect or open favourites?
@@ -156,9 +156,9 @@ class PagesController extends StudipController
         // Add new courseware style
         PageLayout::addStylesheet($this->plugin->getPluginURL() . '/assets/pages.css');
 
-        // Add koop menu
-        // Build sidebar around courseware with koop_page template
-        PageLayout::addBodyElements($this->get_koop_content());
+        // Add teachUOS menu
+        // Build sidebar around courseware with teachUOS_page template
+        PageLayout::addBodyElements($this->get_teachUOS_content());
         // Enable new courseware style
         PageLayout::addScript($this->plugin->getPluginURL() . '/assets/pages.js');
 
@@ -189,34 +189,34 @@ class PagesController extends StudipController
         exit();
     }
 
-    public function get_koop_content()
+    public function get_teachUOS_content()
     {
-        // select koop_page as template
+        // select teachUOS_page as template
         $path_to_the_templates = dirname(__FILE__) . '/../templates';
         $factory = new Flexi_TemplateFactory($path_to_the_templates);
-        $koop_page_template = $factory->open('koop_page');
+        $teachUOS_page_template = $factory->open('teachUOS_page');
 
-        //set $plugin variable for koop_page template
-        $koop_page_template->set_attribute('plugin', $this->plugin);
+        //set $plugin variable for teachUOS_page template
+        $teachUOS_page_template->set_attribute('plugin', $this->plugin);
 
-        // set URI and path variables for koop_page template
-        $koop_page_template->set_attribute('ABSOLUTE_URI_STUDIP', $GLOBALS['ABSOLUTE_URI_STUDIP']);
-        $koop_page_template->set_attribute('getPluginPath', $this->plugin->getPluginPath());
-        $koop_page_template->set_attribute('id_arr', $this->plugin->getKoopBlockIDs());
+        // set URI and path variables for teachUOS_page template
+        $teachUOS_page_template->set_attribute('ABSOLUTE_URI_STUDIP', $GLOBALS['ABSOLUTE_URI_STUDIP']);
+        $teachUOS_page_template->set_attribute('getPluginPath', $this->plugin->getPluginPath());
+        $teachUOS_page_template->set_attribute('id_arr', $this->plugin->getTeachUOSBlockIDs());
         $selected_id = Request::option('selected');
-        $koop_page_template->set_attribute('selected_id', $selected_id);
+        $teachUOS_page_template->set_attribute('selected_id', $selected_id);
         // get parent of selected courseware block
         $selected_parent_id = \Mooc\DB\Block::find($selected_id)->parent_id;
-        $koop_page_template->set_attribute('selected_parent_id', $selected_parent_id);
+        $teachUOS_page_template->set_attribute('selected_parent_id', $selected_parent_id);
         // get grandparent of selected courseware block
         $selected_grandparent_id = \Mooc\DB\Block::find($selected_parent_id)->parent_id;
-        $koop_page_template->set_attribute('selected_grandparent_id', $selected_grandparent_id);
+        $teachUOS_page_template->set_attribute('selected_grandparent_id', $selected_grandparent_id);
         
         //check if selected block_id is marked as favourite
-        $koop_page_template->set_attribute('isFavourite', $this->isFavourite($selected_id));
+        $teachUOS_page_template->set_attribute('isFavourite', $this->isFavourite($selected_id));
 
         // render template
-        $menu_content = $koop_page_template->render();
+        $menu_content = $teachUOS_page_template->render();
         return $menu_content;
     }
 }
