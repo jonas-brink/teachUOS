@@ -3,8 +3,8 @@
     <div class="teachuos-content2">
         <!-- myTeachUOS button (in style of forum) -->
         <a id="myteachuos" href="<?= PluginEngine::getURL('teachUOS/pages/favourites') ?>" >
-            <p class="myteachuos_txt">My teachUOS</p>
             <img class="myteachuos_img" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/myteachuos.svg' ?>" />
+            <p class="myteachuos_txt">My teachUOS</p>
         </a>
         
         <!-- teachUOS logo -->
