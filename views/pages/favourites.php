@@ -2,7 +2,7 @@
 <div id="myteachuos_wrapper">
     <div id="myteachuos_container">
         <img id="myteachuos_logo" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $plugin->getPluginPath() . '/assets/images/myteachuos_white.svg' ?>">
-        <p id="myteachuos_title">My teachUOS+</p>
+        <p id="myteachuos_title">My teachUOS</p>
         <div id="link_wrapper">
             <? for ($i = 0; $i < count($favourites_titles); $i++) : ?>
                 <a class="favourites_link" href="<?= PluginEngine::getURL('teachUOS/pages/cw', ['cid' => $course_id, 'selected' => $favourites_titles[$i][0]]) ?>" >
