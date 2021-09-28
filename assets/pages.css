@@ -278,10 +278,11 @@ section.block {
     display: block;
     border-radius: 10px;
     float: right;
-    margin-left: 5%;
     padding-top: 8px;
     padding-bottom: 8px;
-    margin-top: 25px;
+    margin-top: 32px;
+    margin-right: 10px;
+    margin-left: 5%;
     transition: background-color 0.5s !important;
 }
 
