@@ -277,7 +277,7 @@ section.block {
     max-width: 250px;
     display: block;
     border-radius: 10px;
-    float: left;
+    float: right;
     margin-left: 5%;
     padding-top: 8px;
     padding-bottom: 8px;

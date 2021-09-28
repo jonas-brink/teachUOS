@@ -40,11 +40,6 @@
     <!-- COURSEWARE CONTENT -->
     <div class='teachuos-text-behalter'>
         <div id='header-read-mode'>
-            <!-- Button/Link to MyTeachUOS+ page -->
-            <a id="myteachuos" href="<?= PluginEngine::getURL('teachUOS/pages/favourites') ?>">
-                <p class="myteachuos_txt">My teachUOS+</p>
-                <img class="myteachuos_img" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $plugin->getPluginPath() . '/assets/images/myteachuos.svg' ?>">
-            </a>
             <!-- Show star which indicates whether the page has been marked as a favourite or not -->
             <? if(!$isFavourite) : ?>
                 <a class="favourite-star" href="<?= PluginEngine::getURL('teachUOS/pages/addToFavourites', ['selected' => Request::int('selected')]) ?>">
@@ -56,6 +51,12 @@
                     <img src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/favourite.svg" />
                 </a>
             <? endif ?>
+            <!-- Button/Link to MyTeachUOS+ page -->
+            <a id="myteachuos" href="<?= PluginEngine::getURL('teachUOS/pages/favourites') ?>">
+                <p class="myteachuos_txt">My teachUOS+</p>
+                <img class="myteachuos_img" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $plugin->getPluginPath() . '/assets/images/myteachuos.svg' ?>">
+            </a>
+
         </div>
     </div>
 
