@@ -67,6 +67,7 @@ ul#tabs {
 /* My teachUOS button on index page and second layer pages */
 .myteachuos_img {
     float: left;
+    margin-left: 10%;
     margin-bottom: 2px;
 }
 
@@ -75,7 +76,6 @@ ul#tabs {
     width: 65%;
     float: left;
     margin-top: 3px;
-    margin-left: 25px;
     transition: color 0.5s;
     font-size: 12pt;
     font-weight: bold;

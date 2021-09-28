@@ -53,8 +53,8 @@
             <? endif ?>
             <!-- Button/Link to MyTeachUOS page -->
             <a id="myteachuos" href="<?= PluginEngine::getURL('teachUOS/pages/favourites') ?>">
-                <p class="myteachuos_txt">My teachUOS</p>
                 <img class="myteachuos_img" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $plugin->getPluginPath() . '/assets/images/myteachuos.svg' ?>">
+                <p class="myteachuos_txt">My teachUOS</p>
             </a>
 
         </div>
