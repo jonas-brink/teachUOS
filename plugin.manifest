@@ -3,4 +3,4 @@ pluginclassname=TeachUOS
 origin=virtUOS
 version=1.1
 studipMinVersion=4.1
-studipMaxVersion=4.8.99
+studipMaxVersion=5.1
