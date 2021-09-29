@@ -2,5 +2,5 @@
 <? if (!strcmp($course_id, $teachUOS_course_id)) : ?>
     <?= MessageBox::success('Das teachUOS-Plugin ist aktuell in dieser Veranstaltung aktiviert.') ?>
 <? else : ?>
-    <?= MessageBox::info('Aktuell ist das teachUOS-Plugin in einer anderen Veranstaltung aktiviert4: ', [$teachUOS_course_name]); ?>
+    <?= MessageBox::info('Aktuell ist das teachUOS-Plugin in einer anderen Veranstaltung aktiviert: ', [$teachUOS_course_name]); ?>
 <? endif ?>
