@@ -39,7 +39,8 @@ class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin
     {
         $db = DBManager::get();
         $teachUOSCourseID = $db->fetchOne('SELECT `range_id` FROM `plugins_activated` WHERE `pluginid` = ? AND `state` = 1', [$this->getPluginId()]);
-        return $teachUOSCourseID['range_id'];
+        //return $teachUOSCourseID['range_id'];
+        return '258074acc66458393bc9dcc0117baf31';
     }
 
     /**
