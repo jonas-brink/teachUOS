@@ -53,16 +53,17 @@ class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin
         // Get course_id of teachUOS course
         $teachUOS_course_id = $this->getTeachUOSCourse();
 
-        // Find block_ids by title
-        $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $teachUOS_course_id, 'DURCH\'S STUDIUM']);
-        $block_study_id = $block->id;
-        $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $teachUOS_course_id, 'IN DIE PRAXIS']);
-        $block_practice_id = $block->id;
-        $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $teachUOS_course_id, 'DIGITALE MEDIEN']);
-        $block_media_id = $block->id;
-        $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $teachUOS_course_id, 'BLICK IN DIE FÄCHER']);
-        $block_subjects_id = $block->id;
-        return array("study" => $block_study_id, "practice" => $block_practice_id, "media" => $block_media_id, "subjects" => $block_subjects_id);
+        // Find page_ids by title
+        $db = DBManager::get();
+        $page = $db->fetchOne('SELECT * FROM cw_structural_elements WHERE range_id = ? AND title = ?', [$teachUOS_course_id, 'DURCH\'S STUDIUM']);
+        $page_study_id = $page->id;
+        $page = $db->fetchOne('SELECT * FROM cw_structural_elements WHERE range_id = ? AND title = ?', [$teachUOS_course_id, 'IN DIE PRAXIS']);
+        $page_practice_id = $page->id;
+        $page = $db->fetchOne('SELECT * FROM cw_structural_elements WHERE range_id = ? AND title = ?', [$teachUOS_course_id, 'DIGITALE MEDIEN']);
+        $page_media_id = $page->id;
+        $page = $db->fetchOne('SELECT * FROM cw_structural_elements WHERE range_id = ? AND title = ?', [$teachUOS_course_id, 'BLICK IN DIE FÄCHER']);
+        $page_subjects_id = $page->id;
+        return array("study" => $page_study_id, "practice" => $page_practice_id, "media" => $page_media_id, "subjects" => $page_subjects_id);
     }
     
     /**
