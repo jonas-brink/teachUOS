@@ -218,7 +218,9 @@ class PagesController extends StudipController
         $teachUOS_page_template->set_attribute('selected_grandparent_id', $selected_grandparent_id);
         
         //check if selected block_id is marked as favourite
-        $teachUOS_page_template->set_attribute('isFavourite', $this->isFavourite($selected_id));
+        //TODO: uncomment...
+        //$teachUOS_page_template->set_attribute('isFavourite', $this->isFavourite($selected_id));
+        $teachUOS_page_template->set_attribute('isFavourite', false);
 
         // render template
         $menu_content = $teachUOS_page_template->render();
