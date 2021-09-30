@@ -207,10 +207,12 @@ class PagesController extends StudipController
         $selected_id = Request::option('selected');
         $teachUOS_page_template->set_attribute('selected_id', $selected_id);
         // get parent of selected courseware block
-        $selected_parent_id = \Mooc\DB\Block::find($selected_id)->parent_id;
+        //$selected_parent_id = \Mooc\DB\Block::find($selected_id)->parent_id;
+        $selected_parent_id =  $db->fetchOne('SELECT parent_id FROM cw_structural_elements WHERE id = ?', [$selected_id]);
         $teachUOS_page_template->set_attribute('selected_parent_id', $selected_parent_id);
         // get grandparent of selected courseware block
-        $selected_grandparent_id = \Mooc\DB\Block::find($selected_parent_id)->parent_id;
+        //$selected_grandparent_id = \Mooc\DB\Block::find($selected_parent_id)->parent_id;
+        $selected_grandparent_id = $db->fetchOne('SELECT parent_id FROM cw_structural_elements WHERE id = ?', [$selected_parent_id]);
         $teachUOS_page_template->set_attribute('selected_grandparent_id', $selected_grandparent_id);
         
         //check if selected block_id is marked as favourite
