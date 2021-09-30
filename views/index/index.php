@@ -16,7 +16,7 @@
         <div class="flex-container-1000-200-l100">	
             <!-- Section "Durch's Studium" -->
             <div class="index_comic">
-                <a class='teachuos-index-navigation hover_image index_comic2' href="<?= PluginEngine::getURL('teachUOS/pages/cw', ['cid' => $teachUOS_course_id, 'selected' => $study_block_id]) ?>" >
+                <a class='teachuos-index-navigation hover_image index_comic2' href="<?= PluginEngine::getURL('teachUOS/pages/cw', ['cid' => $teachUOS_course_id, 'selected' => $study_block_id]) . "test#" ?>" >
                     <img class="bottom" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_studium_hover.svg' ?>" />
                     <img class="top study_link" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $this->plugin->getPluginPath() . '/assets/images/A_studium.svg' ?>" />
                     <p id="study_txt" class="index_comic_txt study_link">DURCH'S <b id="study_b">STUDIUM</b></p>
