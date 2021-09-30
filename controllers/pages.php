@@ -192,6 +192,8 @@ class PagesController extends StudipController
 
     public function get_teachUOS_content()
     {
+        $db = DBManager::get();
+
         // select teachUOS_page as template
         $path_to_the_templates = dirname(__FILE__) . '/../templates';
         $factory = new Flexi_TemplateFactory($path_to_the_templates);
