@@ -137,7 +137,8 @@ class PagesController extends StudipController
     public function cw_action()
     {
         // Deactivate Veranstaltungen / Courseware in main menu (navigation) 
-        Navigation::getItem('course/mooc_courseware')->setActive(false);
+        //TODO: Deactivate Veranstaltungen / Courseware in main menu (navigation)
+        //Navigation::getItem('course/mooc_courseware')->setActive(false);
 
         // Hide standard courseware
         PageLayout::addStyle('.cw-sidebar { display: none; }');
