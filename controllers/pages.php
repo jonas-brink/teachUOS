@@ -169,7 +169,7 @@ class PagesController extends StudipController
         require_once 'app/controllers/authenticated_controller.php';
 
         // get information from the courseware plugin
-        $Courseware_Plugin = PluginEngine::getPlugin('Courseware');
+        $Courseware_Plugin = \PluginEngine::getPlugin('Courseware');
 
         // TODO: Check if Courseware is enabled
         // if($Courseware_Plugin['enabled']) {
