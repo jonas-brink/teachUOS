@@ -88,7 +88,6 @@
     font-size: Large;
     font-weight: 900;
     min-height: 500px;
-    min-width: 250px;
     display: flex;
 	flex-direction: column;
 }
