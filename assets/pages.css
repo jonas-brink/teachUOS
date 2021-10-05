@@ -30,6 +30,7 @@
     display: block;
     margin-left: 35px;
     margin-right: 35px;
+    min-width: 150px;
     padding-top: 3px;
     padding-bottom: 3px;
     transition: color 0.5s, background-color 0.5s;
@@ -88,7 +89,6 @@
     font-size: Large;
     font-weight: 900;
     min-height: 500px;
-    min-width: 250px;
     display: flex;
 	flex-direction: column;
 }
@@ -273,8 +273,8 @@ section.block {
 /* My teachUOS button on second layer */
 #myteachuos {
     background-color: #f6f7f7;
-    width: 15%;
-    max-width: 250px;
+    width: 18.5%;
+    max-width: 240px;
     display: block;
     border-radius: 10px;
     float: right;
