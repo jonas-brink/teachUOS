@@ -171,11 +171,6 @@ class PagesController extends StudipController
         // get information from the courseware plugin
         $Courseware_Plugin = \PluginManager::getInstance()->getPlugin('Courseware');
 
-        // TODO: Check if Courseware is enabled
-        // if($Courseware_Plugin['enabled']) {
-        // **Courseware ist angeschaltet...**
-        // }
-
         $dispatcher = new Trails_Dispatcher(
             $Courseware_Plugin->getPluginPath(),
             rtrim(PluginEngine::getLink($Courseware_Plugin, array(), null), '/'),
