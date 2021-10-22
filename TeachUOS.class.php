@@ -35,7 +35,13 @@ class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin, Por
      */
     function getPortalTemplate()
     {
+        $template_path = $this->getPluginPath() . '/templates';
+        $template_factory = new Flexi_TemplateFactory($template_path);
+        $template = $template_factory->open('widget');
 
+        $template->title = _('OSKA – Mein*e Mentor*in am Studienanfang');
+
+        return $template;
     }
 
     /**
