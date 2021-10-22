@@ -3,7 +3,7 @@
 /**
  * [Description TeachUOS]
  */
-class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin
+class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin, PortalPlugin
 {
         
     /**
@@ -28,6 +28,14 @@ class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin
     public function getPluginName()
     {
     	return 'teachUOS';
+    }
+
+    /**
+     * Returns the portal widget template.
+     */
+    function getPortalTemplate()
+    {
+
     }
 
     /**
