@@ -1,6 +1,6 @@
-<div>
-    <div>
-        <p><?= _('Info-Text zu teachUOS.') ?></p>
+<article class="studip">
+    <section>
+        <?= _('Info-Text zu teachUOS.') ?>
         <?= Studip\Button::create(_('teachUOS für mich aktivieren'), 'oska_matching_button', ['class' => 'oska-find']) ?>
-    </div>
-</div>
+    </section>
+</article>
