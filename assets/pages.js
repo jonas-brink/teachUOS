@@ -58,7 +58,7 @@ $(document).ready(function () {
 		}
 	);
 
-	$('.teachuos-back').mouseleave(
+	$('#page-home-btn').mouseleave(
 		function () {
 			$('#page-home-btn .top').css('opacity', '100');
 		}
