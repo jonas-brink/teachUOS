@@ -271,7 +271,7 @@ section.block {
 }
 
 /* My teachUOS button on second layer */
-#myteachuos {
+.myteachuos {
     background-color: #f6f7f7;
     width: 18.5%;
     max-width: 240px;
@@ -286,7 +286,11 @@ section.block {
     transition: background-color 0.5s !important;
 }
 
-#myteachuos:hover {
+.myteachuos:hover {
     background-color: #28497c;
     color: white;
+}
+
+#page-home-btn {
+    float: left;
 }

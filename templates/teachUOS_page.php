@@ -45,14 +45,14 @@
                 </a>
             <? endif ?>
             <!-- Button/Link to MyTeachUOS page -->
-            <a id="myteachuos" href="<?= PluginEngine::getURL('teachUOS/pages/favourites') ?>">
+            <a class="myteachuos" href="<?= PluginEngine::getURL('teachUOS/pages/favourites') ?>">
                 <img class="myteachuos_img" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $plugin->getPluginPath() . '/assets/images/myteachuos.svg' ?>">
                 <p class="myteachuos_txt">My teachUOS</p>
             </a>
 
             <!-- Button/Link to return to index page -->
-            <a id="myteachuos" href="<?= PluginEngine::getURL('teachUOS/pages/favourites') ?>">
-                <img class="" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $plugin->getPluginPath() . '/assets/images/home.svg' ?>">
+            <a id="page-home-btn" class="myteachuos" href="<?= PluginEngine::getURL('teachUOS/pages/favourites') ?>">
+                <img src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $plugin->getPluginPath() . '/assets/images/home_hover.svg' ?>">
             </a>
         </div>
     </div>
