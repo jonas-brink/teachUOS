@@ -17,14 +17,7 @@
             <? endif ?>
         </div>
 
-        <!-- COURSEWARE SIDEBAR -->
-
-        <!-- Button with icon to return to the index pages -->
-        <a class='teachuos-back'  href='..\'>
-            <img width="30" class="top" src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/home.svg" />
-            <img width="30" class="bottom" src="<?=$ABSOLUTE_URI_STUDIP ?><?= $getPluginPath ?>/assets/images/home_hover.svg" />
-        </a>    
-        
+        <!-- COURSEWARE SIDEBAR -->        
         <!-- teachUOS logo at the bottom of the sidebar -->
         <div id="logo_wrapper">
             <div class="teachuos-footer light">
@@ -53,10 +46,14 @@
             <? endif ?>
             <!-- Button/Link to MyTeachUOS page -->
             <a id="myteachuos" href="<?= PluginEngine::getURL('teachUOS/pages/favourites') ?>">
-                 <img class="myteachuos_img" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $plugin->getPluginPath() . '/assets/images/myteachuos.svg' ?>">
+                <img class="myteachuos_img" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $plugin->getPluginPath() . '/assets/images/myteachuos.svg' ?>">
                 <p class="myteachuos_txt">My teachUOS</p>
             </a>
 
+            <!-- Button/Link to return to index page -->
+            <a id="myteachuos" href="<?= PluginEngine::getURL('teachUOS/pages/favourites') ?>">
+                <img class="" src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $plugin->getPluginPath() . '/assets/images/home.svg' ?>">
+            </a>
         </div>
     </div>
 
