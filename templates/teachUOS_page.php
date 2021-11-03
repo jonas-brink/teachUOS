@@ -53,6 +53,7 @@
             <!-- Button/Link to return to index page -->
             <a id="page-home-btn" class="myteachuos" href="<?= PluginEngine::getURL('teachUOS/index') ?>">
                 <img src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $plugin->getPluginPath() . '/assets/images/home_hover.svg' ?>">
+                <img src="<?=$GLOBALS['ABSOLUTE_URI_STUDIP'] . $plugin->getPluginPath() . '/assets/images/home.svg' ?>">
             </a>
         </div>
     </div>
