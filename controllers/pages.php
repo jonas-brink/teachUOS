@@ -190,7 +190,7 @@ class PagesController extends StudipController
         
         $dispatcher = new StudipDispatcher();
         //echo $dispatcher->map_uri_to_response($dispatcher->clean_request_uri((string) $uri))->output();
-        $dispatcher->dispatch($request_uri);
+        $dispatcher->dispatch($uri);
 
 
         exit();
