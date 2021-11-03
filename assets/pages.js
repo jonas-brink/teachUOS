@@ -54,13 +54,13 @@ $(document).ready(function () {
 	// Hover effect on home button
 	$('#page-home-btn').mouseenter(
 		function () {
-			$('#page-home-btn .top').css('opacity', '0');
+			$('#page-home-btn .top').css('opacity', '100');
 		}
 	);
 
 	$('.teachuos-back').mouseleave(
 		function () {
-			$('#page-home-btn .top').css('opacity', '100');
+			$('#page-home-btn .top').css('opacity', '0');
 		}
 	);
 
