@@ -1,6 +1,6 @@
-<div>
-    <div>
+<article class="studip">
+    <section>
         <p><?= _('Info-Text zu teachUOS.') ?></p>
-        <?= Studip\Button::create(_('teachUOS für mich aktivieren'), 'oska_matching_button', ['class' => 'oska-find']) ?>
-    </div>
-</div>
+        <?= \Studip\LinkButton::create(_('teachUOS für mich aktivieren'), URLHelper::getLink('dispatch.php/course/enrolment/apply/' . $teachUOS_course_id), []) ?>
+    </section>
+</article>

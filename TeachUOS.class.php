@@ -38,6 +38,8 @@ class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin, Por
         $template_path = $this->getPluginPath() . '/templates';
         $template_factory = new Flexi_TemplateFactory($template_path);
         $template = $template_factory->open('widget');
+        //set $teachUOS_course_id variable for widget template
+        $template->set_attribute('teachUOS_course_id', $this->getTeachUOSCourse());
         //TODO: set title of widget
         $template->title = _('teachUOS');
 
