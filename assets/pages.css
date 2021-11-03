@@ -293,4 +293,6 @@ section.block {
 
 #page-home-btn {
     float: left;
+    padding-top: 5.5px;
+    padding-bottom: 5.5px;
 }
