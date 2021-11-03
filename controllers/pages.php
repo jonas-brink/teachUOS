@@ -185,7 +185,7 @@ class PagesController extends StudipController
 
         URLHelper::setBaseUrl($GLOBALS['ABSOLUTE_URI_STUDIP']);
 
-        $request_uri = $uri = '/courseware?' . explode('?', $_SERVER['REQUEST_URI'])[1];
+        $request_uri = $uri = 'course/courseware?' . explode('?', $_SERVER['REQUEST_URI'])[1];
 
         $dispatcher = new StudipDispatcher();
         $dispatcher->dispatch($request_uri);
