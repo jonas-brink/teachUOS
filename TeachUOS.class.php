@@ -11,15 +11,19 @@ class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin, Por
     public function __construct()
     {
         parent::__construct();
-        // Add icon to main navigation with link to /index
-        $navigation = new Navigation('teachUOS');
-        $navigation->setImage(Icon::create('doctoral_cap', 'navigation'));
-        $navigation->setURL(PluginEngine::getURL($this, array(), 'index'));
-        Navigation::addItem('/teachUOS', $navigation);
-        
-        // Add one subnavigation for consistency reasons
-        $teachUOS = new Navigation('teachUOS', PluginEngine::getURL($this, array(), 'index'));
-        $navigation->addSubNavigation('teachUOS', $teachUOS);
+
+        //TODO: Check if student is member of teachUOS-course 
+        if (true) {
+            // Add icon to main navigation with link to /index
+            $navigation = new Navigation('teachUOS');
+            $navigation->setImage(Icon::create('doctoral_cap', 'navigation'));
+            $navigation->setURL(PluginEngine::getURL($this, array(), 'index'));
+            Navigation::addItem('/teachUOS', $navigation);
+            
+            // Add one subnavigation for consistency reasons
+            $teachUOS = new Navigation('teachUOS', PluginEngine::getURL($this, array(), 'index'));
+            $navigation->addSubNavigation('teachUOS', $teachUOS);
+        }
     }
 
     /**
