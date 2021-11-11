@@ -62,7 +62,7 @@ class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin, Por
     function getPortalTemplate()
     {
         $template = NULL;
-        if($this->isTeachUOSMember()) 
+        if(!$this->isTeachUOSMember()) 
         {
             $template_path = $this->getPluginPath() . '/templates';
             $template_factory = new Flexi_TemplateFactory($template_path);
