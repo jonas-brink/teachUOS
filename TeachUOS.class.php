@@ -5,7 +5,6 @@
  */
 class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin, PortalPlugin
 {
-        
 
     /**
      * Search for course id where teachUOS plugin is active
@@ -19,20 +18,16 @@ class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin, Por
         return $teachUOSCourseID['range_id'];
     }
 
-
-
     
+
     /**
      */
     public function __construct()
     {
         parent::__construct();
 
-        //TODO: Check if student is member of teachUOS-course 
-        $teachUOS_course_id = $this->getTeachUOSCourse();
-        $member_ids = Course::find($teachUOS_course_id)->members->pluck('user_id');
-        $user_id = $GLOBALS['user']->id;
-        if (in_array($user_id, $member_ids)) {
+        //Check if student is member of teachUOS-course 
+        if ($this->isTeachUOSMember()) {
             // Add icon to main navigation with link to /index
             $navigation = new Navigation('teachUOS');
             $navigation->setImage(Icon::create('doctoral_cap', 'navigation'));
@@ -43,6 +38,17 @@ class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin, Por
             $teachUOS = new Navigation('teachUOS', PluginEngine::getURL($this, array(), 'index'));
             $navigation->addSubNavigation('teachUOS', $teachUOS);
         }
+    }
+
+    /**
+     * 
+     */
+    public function isTeachUOSMember()
+    {
+        $teachUOS_course_id = $this->getTeachUOSCourse();
+        $member_ids = Course::find($teachUOS_course_id)->members->pluck('user_id');
+        $user_id = $GLOBALS['user']->id;
+        return in_array($user_id, $member_ids);
     }
 
     /**
