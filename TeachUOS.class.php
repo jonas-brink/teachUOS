@@ -13,7 +13,10 @@ class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin, Por
         parent::__construct();
 
         //TODO: Check if student is member of teachUOS-course 
-        if (true) {
+        $teachUOS_course_id = getTeachUOSCourse();
+        $member_ids = Course::find($teachUOS_course_id)->members->pluck('user_id');
+        $user_id = $GLOBALS['user']->id;
+        if (in_array($user_id, $member_ids)) {
             // Add icon to main navigation with link to /index
             $navigation = new Navigation('teachUOS');
             $navigation->setImage(Icon::create('doctoral_cap', 'navigation'));
