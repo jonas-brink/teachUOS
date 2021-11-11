@@ -66,17 +66,14 @@ class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin, Por
         $template = $template_factory->open('widget');
         //set $teachUOS_course_id variable for widget template
         $template->set_attribute('teachUOS_course_id', $this->getTeachUOSCourse());
+        //set $isMember variable if student is already member of teachuos course
+        $template->set_attribute('isMember', $this->isTeachUOSMember());
+
         //TODO: set title of widget
         $template->title = _('teachUOS');
 
         return $template;
     }
-
-    
-
-
-
-
 
     /**
      * Search for courseware ids of teachUOS blocks
