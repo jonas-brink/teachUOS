@@ -73,7 +73,7 @@ class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin, Por
         $teachUOS_course_id = $this->getTeachUOSCourse();
 
         // Find block_ids by title
-        $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $teachUOS_course_id, 'DURCH\'S STUDIUM']);
+        $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $teachUOS_course_id, 'DURCHS STUDIUM']);
         $block_study_id = $block->id;
         $block = \Mooc\DB\Block::findOneBySQL('type = ? AND seminar_id = ? AND title = ?', ['Chapter', $teachUOS_course_id, 'IN DIE PRAXIS']);
         $block_practice_id = $block->id;
