@@ -6,6 +6,22 @@
 class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin, PortalPlugin
 {
         
+
+    /**
+     * Search for course id where teachUOS plugin is active
+     * 
+     * @return [type]
+     */
+    public function getTeachUOSCourse()
+    {
+        $db = DBManager::get();
+        $teachUOSCourseID = $db->fetchOne('SELECT `range_id` FROM `plugins_activated` WHERE `pluginid` = ? AND `state` = 1', [$this->getPluginId()]);
+        return $teachUOSCourseID['range_id'];
+    }
+
+
+
+    
     /**
      */
     public function __construct()
@@ -53,17 +69,11 @@ class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin, Por
         return $template;
     }
 
-    /**
-     * Search for course id where teachUOS plugin is active
-     * 
-     * @return [type]
-     */
-    public function getTeachUOSCourse()
-    {
-        $db = DBManager::get();
-        $teachUOSCourseID = $db->fetchOne('SELECT `range_id` FROM `plugins_activated` WHERE `pluginid` = ? AND `state` = 1', [$this->getPluginId()]);
-        return $teachUOSCourseID['range_id'];
-    }
+    
+
+
+
+
 
     /**
      * Search for courseware ids of teachUOS blocks
