@@ -164,6 +164,10 @@ class PagesController extends StudipController
         require_once 'app/controllers/studip_controller.php';
         require_once 'app/controllers/authenticated_controller.php';
 
+        $this->studip_module = checkObjectModule('CoursewareModule', true);
+        $courseware_plugin_id = $this->studip_module->getPluginId();
+        echo $courseware_plugin_id;
+
         // get information from the courseware plugin
         $Courseware_Plugin = \PluginManager::getInstance()->getPlugin('Courseware');
 
