@@ -171,12 +171,12 @@ class PagesController extends StudipController
         //$Courseware_Plugin = \PluginManager::getInstance()->getPlugin('CoursewareModule');
         $Courseware_Plugin = new CoursewareModule();
 
-        echo rtrim(PluginEngine::getLink($Courseware_Plugin, array(), null), '/');
+        echo $Courseware_Plugin->getMetadata();
         exit();
 
 
         $dispatcher = new Trails_Dispatcher(
-            $Courseware_Plugin->getPluginURL(),
+            'coursewaremodule',
             rtrim(PluginEngine::getLink($Courseware_Plugin, array(), null), '/'),
             'coursewaremodule'
         );
