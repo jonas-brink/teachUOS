@@ -32,11 +32,13 @@ class PagesController extends StudipController
         //get course_id
         $this->course_id = $this->plugin->getTeachUOSCourse();
         // Get favourites and order them alphabetically by title
-        $favourites = $db->fetchAll("SELECT * 
+        $favourites = $db->fetchAll(
+            "SELECT * 
                                     FROM teachUOS_favourites  
                                     WHERE user_id=? AND course_id=? 
-                                    ORDER BY title", 
-                                    [$user_id, $this->course_id]);
+                                    ORDER BY title",
+            [$user_id, $this->course_id]
+        );
 
         $this->favourites_titles = array();
         for ($i = 0; $i < count($favourites); $i++) {
@@ -64,17 +66,15 @@ class PagesController extends StudipController
         $course_id = Request::option('cid');
         //check if type of selected block is 'Section'
         $block = \Mooc\DB\Block::find($block_id);
-        while ($block->type !== 'Section')
-        {
+        while ($block->type !== 'Section') {
             $block = \Mooc\DB\Block::findOneBySQL('parent_id=? AND position=?', [$block_id, 0]);
             $block_id = $block->id;
         }
-        
+
         $queryResult = $db->fetchOne("SELECT COUNT(*) AS isFavourite FROM `teachUOS_favourites` WHERE user_id=? AND course_id=? AND block_id=?", [$user_id, $course_id, $block_id]);
         $isFavourite = intval($queryResult['isFavourite']);
-        
-        if($isFavourite)
-        {
+
+        if ($isFavourite) {
             return true;
         }
         return false;
@@ -92,8 +92,7 @@ class PagesController extends StudipController
         $block_id = Request::int('selected');
 
         //check if block_id is marked as favourite
-        if($this->isFavourite($block_id))
-        {
+        if ($this->isFavourite($block_id)) {
             //delete favourite from db
             $db->execute('DELETE FROM `teachUOS_favourites` WHERE user_id=? AND course_id=? AND block_id=?', [$user_id, $course_id, $block_id]);
         }
@@ -114,12 +113,10 @@ class PagesController extends StudipController
         $block_id = Request::int('selected');
 
         //check if block_id is not already marked as favourite
-        if(!$this->isFavourite($block_id))
-        {
+        if (!$this->isFavourite($block_id)) {
             //check if type of selected block is 'Section'
             $block = \Mooc\DB\Block::find($block_id);
-            while ($block->type !== 'Section')
-            {
+            while ($block->type !== 'Section') {
                 $block = \Mooc\DB\Block::findOneBySQL('parent_id=? AND position=?', [$block_id, 0]);
                 //TODO: is this neccessary???
                 $block_id = $block->id;
@@ -131,7 +128,6 @@ class PagesController extends StudipController
 
         //TODO: redirect or open favourites?
         $this->redirect(PluginEngine::getURL($this->plugin, ['cid' => $course_id, 'selected' => $block_id], 'pages/cw'));
-
     }
 
     public function cw_action()
@@ -175,6 +171,9 @@ class PagesController extends StudipController
         // **Courseware ist angeschaltet...**
         // }
 
+        echo $Courseware_Plugin->getPluginPath();
+        exit();
+
         $dispatcher = new Trails_Dispatcher(
             $Courseware_Plugin->getPluginPath(),
             rtrim(PluginEngine::getLink($Courseware_Plugin, array(), null), '/'),
@@ -211,7 +210,7 @@ class PagesController extends StudipController
         // get grandparent of selected courseware block
         $selected_grandparent_id = \Mooc\DB\Block::find($selected_parent_id)->parent_id;
         $teachUOS_page_template->set_attribute('selected_grandparent_id', $selected_grandparent_id);
-        
+
         //check if selected block_id is marked as favourite
         $teachUOS_page_template->set_attribute('isFavourite', $this->isFavourite($selected_id));
 
