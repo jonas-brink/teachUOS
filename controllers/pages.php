@@ -171,7 +171,7 @@ class PagesController extends StudipController
         //$Courseware_Plugin = \PluginManager::getInstance()->getPlugin('CoursewareModule');
         $Courseware_Plugin = new CoursewareModule();
 
-        echo $Courseware_Plugin->getMetadata();
+        echo var_dump($Courseware_Plugin->getMetadata());
         exit();
 
 
