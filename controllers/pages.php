@@ -171,7 +171,7 @@ class PagesController extends StudipController
         //$Courseware_Plugin = \PluginManager::getInstance()->getPlugin('CoursewareModule');
         $Courseware_Plugin = new CoursewareModule();
 
-        echo ($Courseware_Plugin->getInfoTemplate('258074acc66458393bc9dcc0117baf31'));
+        echo ($Courseware_Plugin->plugin_info);
         exit();
 
 
