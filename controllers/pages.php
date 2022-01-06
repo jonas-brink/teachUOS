@@ -169,7 +169,7 @@ class PagesController extends StudipController
         echo $courseware_plugin_id;
 
         // get information from the courseware plugin
-        $Courseware_Plugin = \PluginManager::getInstance()->getPlugin('Courseware');
+        /*$Courseware_Plugin = \PluginManager::getInstance()->getPlugin('Courseware');
 
         $dispatcher = new Trails_Dispatcher(
             $Courseware_Plugin->getPluginPath(),
@@ -181,7 +181,7 @@ class PagesController extends StudipController
         // load courseware
         $uri = 'courseware?' . explode('?', $_SERVER['REQUEST_URI'])[1];
         echo $dispatcher->map_uri_to_response($dispatcher->clean_request_uri((string) $uri))->output();
-
+*/
         exit();
     }
 
