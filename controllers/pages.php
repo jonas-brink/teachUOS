@@ -164,12 +164,11 @@ class PagesController extends StudipController
         require_once 'app/controllers/studip_controller.php';
         require_once 'app/controllers/authenticated_controller.php';
 
-        $this->studip_module = checkObjectModule('CoursewareModule', true);
-        $courseware_plugin_id = $this->studip_module->getPluginId();
-        echo $courseware_plugin_id;
+        //$this->studip_module = checkObjectModule('CoursewareModule', true);
+        //$courseware_plugin_id = $this->studip_module->getPluginId(); //$courseware_plugin_id = 26 on test server
 
         // get information from the courseware plugin
-        /*$Courseware_Plugin = \PluginManager::getInstance()->getPlugin('Courseware');
+        $Courseware_Plugin = \PluginManager::getInstance()->getPlugin('CoursewareModule');
 
         $dispatcher = new Trails_Dispatcher(
             $Courseware_Plugin->getPluginPath(),
@@ -181,7 +180,7 @@ class PagesController extends StudipController
         // load courseware
         $uri = 'courseware?' . explode('?', $_SERVER['REQUEST_URI'])[1];
         echo $dispatcher->map_uri_to_response($dispatcher->clean_request_uri((string) $uri))->output();
-*/
+
         exit();
     }
 
