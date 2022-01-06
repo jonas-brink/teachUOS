@@ -165,7 +165,7 @@ class PagesController extends StudipController
         require_once 'app/controllers/authenticated_controller.php';
 
         // get information from the courseware plugin
-        $Courseware_Plugin = \PluginManager::getInstance()->getPlugin('Courseware');
+        $Courseware_Plugin = PluginManager::getInstance()->getPlugin('CoursewareModule');
 
         $dispatcher = new Trails_Dispatcher(
             $Courseware_Plugin->getPluginPath(),
