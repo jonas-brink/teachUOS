@@ -169,8 +169,8 @@ class PagesController extends StudipController
 
         // get information from the courseware plugin
         //$Courseware_Plugin = \PluginManager::getInstance()->getPlugin('CoursewareModule');
-        $Courseware_Plugin = CoursewareModule::getPluginName();
-        echo $Courseware_Plugin;
+        $Courseware_Plugin = new CoursewareModule();
+        echo $Courseware_Plugin->getPluginId();
         /*
         $dispatcher = new Trails_Dispatcher(
             $Courseware_Plugin->getPluginPath(),
