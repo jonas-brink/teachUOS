@@ -169,9 +169,9 @@ class PagesController extends StudipController
 
         // get information from the courseware plugin
         //$Courseware_Plugin = \PluginManager::getInstance()->getPlugin('CoursewareModule');
-        //$Courseware_Plugin = new CoursewareModule();
+        $Courseware_Plugin = new CoursewareModule();
 
-        $Courseware_Plugin = \PluginManager::getInstance()->getPluginById(26);
+        //$Courseware_Plugin = \PluginManager::getInstance()->getPluginById(26);
 
         // TODO: Check if Courseware is enabled
         // if($Courseware_Plugin['enabled']) {
