@@ -180,6 +180,10 @@ class PagesController extends StudipController
 
         // load courseware
         $uri = 'coursewaremodule?' . explode('?', $_SERVER['REQUEST_URI'])[1];
+        echo $dispatcher->map_uri_to_response($dispatcher->clean_request_uri((string) $uri))
+        exit();
+        
+        
         echo $dispatcher->map_uri_to_response($dispatcher->clean_request_uri((string) $uri))->output();
 
         exit();
