@@ -174,7 +174,7 @@ class PagesController extends StudipController
         $dispatcher = new Trails_Dispatcher(
             $Courseware_Plugin->getPluginURL(),
             rtrim(PluginEngine::getLink($Courseware_Plugin, array(), null), '/'),
-            'courseware'
+            'course/courseware'
         );
         $dispatcher->plugin = $Courseware_Plugin;
 
