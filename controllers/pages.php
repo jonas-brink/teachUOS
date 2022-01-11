@@ -171,9 +171,6 @@ class PagesController extends StudipController
         // **Courseware ist angeschaltet...**
         // }
 
-        echo rtrim(PluginEngine::getLink($Courseware_Plugin, array(), null), '/');
-        exit();
-
 
         $dispatcher = new Trails_Dispatcher(
             $Courseware_Plugin->getPluginPath(),
