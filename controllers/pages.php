@@ -179,8 +179,8 @@ class PagesController extends StudipController
         // }
 
         $dispatcher = new Trails_Dispatcher(
-            $Courseware_Plugin->getPluginPath(),
-            rtrim(PluginEngine::getLink($Courseware_Plugin, array(), null), '/'),
+            "plugins_packages/virtUOS/Courseware",
+            "/studip/qplus-koop-5.0/dispatch.php/course/?cid=258074acc66458393bc9dcc0117baf31",
             'courseware'
         );
         $dispatcher->plugin = $Courseware_Plugin;
