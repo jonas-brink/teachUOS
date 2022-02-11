@@ -302,5 +302,5 @@ section.block {
 }
 
 iframe {
-    max-width: none;
+    max-width: none !important;
 }
