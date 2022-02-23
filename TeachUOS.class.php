@@ -18,6 +18,10 @@ class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin, Por
             $navigation->setImage(Icon::create('doctoral_cap', 'navigation'));
             $navigation->setURL(PluginEngine::getURL($this, array(), 'index'));
             Navigation::addItem('/teachUOS', $navigation);
+
+            // Add one subnavigation
+            $teachUOS = new Navigation('teachUOS', PluginEngine::getURL($this, array(), 'index'));
+            $navigation->addSubNavigation('teachUOS', $teachUOS);
         }
     }
 
