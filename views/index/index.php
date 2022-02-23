@@ -55,10 +55,16 @@
         <div class="teachuos-footer-content">
             <h3>Herzlich Willkommen auf teachUOS!</h3>
             <p class="light">
-                Du suchst nach Orientierung in deinem Lehramtsstudium? Wer kann dir helfen und wo findest du die richtigen Informationen? Du möchtest deinen eigenen Lernprozess durch Lerntools oder -videos unterstützen? Du interessierst dich über das Studienangebot hinaus für Möglichkeiten des digitalen Unterrichts? Vielleicht hast du auch Lust, einen Blick in andere Fächer zu werfen oder denkst über einen Auslandsaufenthalt nach? Viele Anregungen, Hinweise und Tipps findest du hier auf <font color="#7F9CE3">teachUOS</font>!
+                Du suchst nach Orientierung in deinem Lehramtsstudium und einen zentralen Ort mit allen wichtigen Informationen rund ums Studium? Dann bist du bei <font color="#7F9CE3">teachUOS</font> richtig!
             </p>
             <p class="light">
-                <font color="#7F9CE3">teachUOS</font> ist fächerübergreifend angelegt und richtet sich an alle Lehramtsstudierende. Unimitarbeitende aus dem wissenschaftlichen und organisatorischen Bereich sowie Studierende haben an der Entwicklung dieses Portals mitgewirkt. <font color="#7F9CE3">teachUOS</font> lädt zum Stöbern und Mitgestalten ein. Melde dich gerne hier, falls du Infos vermisst oder Tipps für Verbesserungen hast!
+                Beispielsweise findest du hier Anregungen, Tipps und Ansprechpartner:innen zu deinen Fächern, Möglichkeiten des digitalen Unterrichts, Hinweise zu Auslandsaufenthalten sowie Fort- und Weiterbildungsangebote.
+            </p>
+            <p class="light">
+                <font color="#7F9CE3">teachUOS</font> ist fächerübergreifend angelegt und richtet sich an alle Lehramtsstudierenden. Mitarbeitende der Universität Osnabrück sowie Studierende haben an der Entwicklung mitgewirkt. <font color="#7F9CE3">teachUOS</font> lädt ein zum Stöbern und bietet dir die Möglichkeit, deine Infos personalisiert abzuspeichern.
+            </p>
+            <p class="light">
+                Probiere es aus und profitiere von den Vorteilen einer zentralen Informationsplattform für dein Lehramtsstudium.
             </p>
         </div>
     </div>

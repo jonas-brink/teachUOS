@@ -18,10 +18,6 @@ class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin, Por
             $navigation->setImage(Icon::create('doctoral_cap', 'navigation'));
             $navigation->setURL(PluginEngine::getURL($this, array(), 'index'));
             Navigation::addItem('/teachUOS', $navigation);
-            
-            // Add one subnavigation for consistency reasons
-            $teachUOS = new Navigation('teachUOS', PluginEngine::getURL($this, array(), 'index'));
-            $navigation->addSubNavigation('teachUOS', $teachUOS);
         }
     }
 
@@ -53,7 +49,7 @@ class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin, Por
      */
     public function getPluginName()
     {
-    	return 'teachUOS';
+        return 'teachUOS';
     }
 
     /**
@@ -96,7 +92,7 @@ class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin, Por
         $block_subjects_id = $block->id;
         return array("study" => $block_study_id, "practice" => $block_practice_id, "media" => $block_media_id, "subjects" => $block_subjects_id);
     }
-    
+
     /**
      * STANDARDPLUGIN
      * Liefert ein Template, das auf der Kurzinfoseite der Veranstaltung bzw. Einrichtung angezeigt wird.
@@ -127,16 +123,10 @@ class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin, Por
     }
 
     /**
+     * Returns a navigation for the tab displayed in the course.
      * 
      * @param string $course_id of the course
      * @return \Navigation
-     */
-    /**
-     * Returns a navigation for the tab displayed in the course.
-     * 
-     * @param mixed $course_id
-     * 
-     * @return [type]
      */
     public function getTabNavigation($course_id)
     {
@@ -157,5 +147,4 @@ class TeachUOS extends StudipPlugin implements StandardPlugin, SystemPlugin, Por
     {
         return $GLOBALS['perm']->have_perm('root');
     }
-    
 }
